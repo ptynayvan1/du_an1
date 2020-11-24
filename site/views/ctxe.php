@@ -43,11 +43,9 @@
         font-family: Courier;
         font-display: 1s;
     }
-<<<<<<< HEAD
     .modal-content{
         width: 600px;
     }
-=======
     .rowbannerchinh {
         float: left;
         width: 100%;
@@ -81,7 +79,6 @@
         width: 100%;
     }
 </style>
->>>>>>> 8400f2e0626ae5f0ccd265d07055e36bdb06fb59
 </style>
 <script>
     var num = 0;
