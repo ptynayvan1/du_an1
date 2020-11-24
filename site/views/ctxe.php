@@ -164,8 +164,8 @@
                     </div>
                     
                 </div>
-                <div class="details col-md-6    ">
-                    <div class="form-thuexe" style="width:80%; height: 900px;">
+                <div class="details col-md-6">
+                    <div class="form-thuexe" style="width:80%; height: 550px; margin-bottom: 20px">
                     <h3 class="product-title" style="color: black; font-weight: bolder;"><?=$ctxe['Ten_xe']?></h3>
                                 <div class="rating">
                                     <div class="stars"> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star"></span> <span class="fa fa-star"></span>

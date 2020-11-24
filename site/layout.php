@@ -26,9 +26,9 @@
         width: 300px;
         font-size: 13pt;
         }
-        .site-logo strong{
-            font-size: 20pt;
-        }
+    .site-logo strong{
+        font-size: 20pt;
+    }
 </style>
 <body>
     <div class="site-wrap" id="home-section">
@@ -62,6 +62,7 @@
                                 <li class="active"><a href="index.php" class="nav-link">Home</a></li>
                                 <li><a href="index.php?act=ctxe&idxe" class="nav-link">Danh Sách Xe</a></li>
                                 <li><a href="testimonials.html" class="nav-link">Các Đánh Giá</a></li>
+                                <li><a href="history_p.html" class="nav-link">Xe Đã Thuê</a></li>
                                 <?php
                                 if (isset($_SESSION['user'])) {
                                 echo '<a href="index.php?act=logout"> <button type="dangnhap">Đăng xuất</button></a>';
@@ -75,14 +76,9 @@
                             </ul>
                         </nav>
                     </div>
-
-
                 </div>
             </div>
-
         </header>
-
-
         <div class="hero" style="background-image: url('./site/views/images/hero_1_a.jpg');">
 
             <div class="container">
@@ -168,6 +164,9 @@
                             <li><a href="#"><span class="icon-twitter"></span></a></li>
                             <li><a href="#"><span class="icon-linkedin"></span></a></li>
                         </ul>
+                        <div class="maps">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15675.210986536726!2d106.6085871697754!3d10.826402200000008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1svi!2s!4v1605169971153!5m2!1svi!2s" width="100%" height="320" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                        </div>
                     </div>
                     <div class="col-lg-8 ml-auto">
                         <div class="row">
@@ -200,10 +199,9 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="maps">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15675.210986536726!2d106.6085871697754!3d10.826402200000008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1svi!2s!4v1605169971153!5m2!1svi!2s" width="100%" height="660" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-                        </div>
+                        
                     </div>
+                    
                 </div>
                 
         </footer>
