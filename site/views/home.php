@@ -7,6 +7,7 @@
         min-height: 500px;
         object-fit: cover;
       }
+
   </style>
 <div class="site-section">
             <div class="container">
@@ -71,7 +72,7 @@
     </ol>
  
     <!-- Wrapper for slides -->
-    <div class="carousel-inner">
+    <!-- <div class="carousel-inner">
       <div class="item active" >
         <img src="site/views/images/banner_2.jpg" style="width:100%;">
       </div>
@@ -87,7 +88,7 @@
         <img src="site/views/images/banner_4.jpg" style="width:100%;">
       </div>
   
-    	</div>
+    	</div> -->
     <!-- Left and right controls -->
     <a class="left carousel-control" href="#myCarousel" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left"></span>

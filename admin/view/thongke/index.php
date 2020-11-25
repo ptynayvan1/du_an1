@@ -58,7 +58,7 @@
                   <tr>
                   <td>'.$x['id_xe'].'</td>
                   <td>'.$x['Ten_xe'].'</td>
-                  <td>'.$x['soluong'].'</td>
+                  <td>'.$x['soLuong'].'</td>
                 </tr>
                   ';
                 }

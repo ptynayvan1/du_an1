@@ -8,7 +8,7 @@ function drawChart(){
 }
 
 function drawChartXe(){
-    $sql="SELECT id_xe, Ten_xe, soluong 
+    $sql="SELECT id_xe, Ten_xe,soLuong
     from xe";
     return query($sql);
 }
