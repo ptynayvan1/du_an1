@@ -33,15 +33,18 @@
         font-size: 12pt;
     }
     .modal-body input{
-        width: 75%;
-        height: 50px;
-        border-radius: 20px 20px 20px;
+        width: 40%;
+        height: 35px;
+        border-radius: 10px 10px 10px;
         opacity: 0.5;
     }
     
     .modal-body{
-        font-family: Courier;
-        font-display: 1s;
+        font-family:serif;
+    }
+    .modal-body h1{
+        color:orangered;
+        font-weight: bold;
     }
     .modal-content{
         width: 600px;
@@ -183,12 +186,12 @@
                                     <!-- Trigger the modal with a button -->
                                     <?php
                                      if (isset($_SESSION['user'])) { 
-                                        echo '  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Thuê Xe Ngay</button>';
+                                        echo '  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Thuê Xe Ngay</button>
+                                                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Add To Cart</button>';
                                       } else {
                                         echo ' <p style="color:red;font-weight:bold;font-size:25px">BẠN CHƯA ĐĂNG NHẬP</p>';
                                       }
                                     ?>
-                                  
 
                                     <!-- Modal -->
                                     <div class="modal fade" id="myModal" role="dialog">
@@ -202,26 +205,17 @@
                                             </div>
                                             <div class="modal-body">
                                             <form action="">
-                                                <center>
-                                                <h1>Thông Tin Của Bạn</h1>
-                                                <h3>Họ Và Tên</h3>
-                                                <input type="text" name="hoten">
-                                                <h3>Số Điện Thoại</h3>
-                                                <input type="text" name="sdr">
-                                                <h3>Email</h3>
-                                                <input type="text" name="email">
-                                                <h3>Địa Chỉ</h3>
-                                                <input type="text" name="diachi">
-                                                <h3>CMND</h3>
-                                                <input type="text" name="CMND">
-                                                </center>
+                                              <center> <h1>ĐƠN HÀNG</h1></center>
+                                                <h3>Ngày Đặt</h3>
+                                                <input type="date" name="ngaydat">
+                                                <h3>Ngày Trả</h3>
+                                                <input type="date" name="ngaytra">
                                             </form>
                                             </div>
                                             <div class="modal-footer">
                                             <button type="button" class="btn btn-default" data-dismiss="modal">Hoàn Tất</button>
                                             </div>
                                         </div>
-                                        
                                         </div>
                                     </div>
                             </table>
