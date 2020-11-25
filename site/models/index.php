@@ -12,6 +12,11 @@ function anhxe($anhxe){
     $manganh=explode(",",$anhxe);
     return $manganh;
 }
+function themngd($hoten,$matkhau,$tendn,$sdt,$dc,$tp,$qg,$email,$cmnd){
+    $sql="INSERT INTO `nguoi_dung` (`Id_nguoidung`, `ten_dangnhap`, `mat_khau`, `ho_ten`, `email`, `sdt`, `dia_chi`, `thanh_pho`, `quoc_gia`, `id_vaitro`, `cmnd`) VALUES (NULL, '$tendn', '$matkhau', '$hoten', '$email'
+    , '$sdt', '$dc', '$tp', '$qg', '1', '$cmnd');";
+    execute($sql);
+}
 function getbinhluan($id){
     $sql="SELECT * FROM binh_luan INNER JOIN nguoi_dung ON binh_luan.Id_nguoidung = nguoi_dung.Id_nguoidung WHERE id_xe='$id' ORDER BY Id_binhluan";
     return query($sql);

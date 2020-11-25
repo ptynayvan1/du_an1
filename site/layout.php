@@ -29,6 +29,12 @@
     .site-logo strong{
         font-size: 20pt;
     }
+    .dk{
+        padding: 8px 15px !important;
+        background-color: #b9dbff;
+        color: white;
+        border-radius: 5px;
+    }
 </style>
 <body>
     <div class="site-wrap" id="home-section">
@@ -63,15 +69,16 @@
                                 <li><a href="index.php?act=ctxe&idxe" class="nav-link">Danh Sách Xe</a></li>
                                 <li><a href="testimonials.html" class="nav-link">Các Đánh Giá</a></li>
                                 <li><a href="history_p.html" class="nav-link">Xe Đã Thuê</a></li>
+                                <li>
                                 <?php
                                 if (isset($_SESSION['user'])) {
-                                echo '<a href="index.php?act=logout"> <button type="dangnhap">Đăng xuất</button></a>';
+                                echo '<a href="index.php?act=logout" class=" dk nav-link"> Đăng xuất</a>';
                                 }else{
-                                    echo '<a href="index.php?act=login1"> <input type="submit" value="Đăng Nhập"></a>';
+                                    echo '<a href="index.php?act=login1" class=" dk nav-link">Đăng nhập</a>';
                                 }
-                                ?>
-                        
-                                <input type="submit" value="Đăng Ký" style="margin-left: 20px;">
+                                ?></li>
+                        <li><a href="index.php?act=signup" class=" dk nav-link">Đăng kí</a></li>
+                              
                                 
                             </ul>
                         </nav>

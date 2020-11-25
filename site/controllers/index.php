@@ -62,5 +62,35 @@
     unset($_SESSION['user']);
     unset($_SESSION['id']);
     header("location: index.php");
+  break;
+  case "signup_":
+  if($_POST['tendn']!=""&&$_POST['cmnd']!=""&&$_POST['hoten']!=""&&$_POST['email']!=""&&$_POST['sdt']!=""&&$_POST['dc']!=""&&$_POST['tp']!=""&&$_POST['qg']!=""&&$_POST['matkhau']!=""){
+    $tendn=$_POST['tendn'];
+    $matkhau=$_POST['matkhau'];
+    $email=$_POST['email'];
+    $sdt=$_POST['sdt'];
+    $dc=$_POST['dc'];
+    $tp=$_POST['tp'];
+    $qg=$_POST['qg'];
+    $cmnd=$_POST['cmnd'];
+    $hoten=$_POST['hoten'];
+    themngd($hoten,$matkhau,$tendn,$sdt,$dc,$tp,$qg,$email,$cmnd);
+    $_SESSION['user']=$tendn;
+    $_SESSION['id']=$check['Id_nguoidung'];
+    header("location: index.php");
+
+  }
+  else{
+    $a='<script>
+    alert("Vui lòng nhập đủ thông tin")
+</script>';
+header("location: index.php?act=signup");
+
+  }
+  break;
+  case "signup" :
+    $view="./site/views/signup.php";
+    require_once "./site/layout.php";
+  break;
   }
 ?>
