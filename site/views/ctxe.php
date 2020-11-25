@@ -200,7 +200,7 @@
                                             </div>
                                             <div class="modal-body">
                                             <form action="">
-                                                <h1>Thông Tin Của Bạn</h1>
+                                               
                                                 <h3>Ngày Đặt</h3>
                                                 <input type="date" name="ngaydat">
                                                 <h3>Ngày Trả</h3>
