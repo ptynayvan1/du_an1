@@ -188,8 +188,6 @@
                                         echo ' <p style="color:red;font-weight:bold;font-size:25px">BẠN CHƯA ĐĂNG NHẬP</p>';
                                       }
                                     ?>
-                                  
-
                                     <!-- Modal -->
                                     <div class="modal fade" id="myModal" role="dialog">
                                     <input type="hidden" id="id_xe" name="id_xe" value="<?=$ctxe['id_xe']?>">
@@ -202,26 +200,17 @@
                                             </div>
                                             <div class="modal-body">
                                             <form action="">
-                                                <center>
                                                 <h1>Thông Tin Của Bạn</h1>
-                                                <h3>Họ Và Tên</h3>
-                                                <input type="text" name="hoten">
-                                                <h3>Số Điện Thoại</h3>
-                                                <input type="text" name="sdr">
-                                                <h3>Email</h3>
-                                                <input type="text" name="email">
-                                                <h3>Địa Chỉ</h3>
-                                                <input type="text" name="diachi">
-                                                <h3>CMND</h3>
-                                                <input type="text" name="CMND">
-                                                </center>
+                                                <h3>Ngày Đặt</h3>
+                                                <input type="date" name="ngaydat">
+                                                <h3>Ngày Trả</h3>
+                                                <input type="date" name="ngaytra">
                                             </form>
                                             </div>
                                             <div class="modal-footer">
                                             <button type="button" class="btn btn-default" data-dismiss="modal">Hoàn Tất</button>
                                             </div>
                                         </div>
-                                        
                                         </div>
                                     </div>
                             </table>
