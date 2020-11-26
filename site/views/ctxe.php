@@ -81,6 +81,11 @@
     .btn2 img {
         width: 100%;
     }
+    .tc{
+        margin-left: 10px;
+        height: 45px;
+        background-color:green;
+    }
 </style>
 </style>
 <script>
@@ -187,7 +192,7 @@
                                     <?php
                                      if (isset($_SESSION['user'])) { 
                                         echo '  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Thuê Xe Ngay</button>
-                                                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Add To Cart</button>';
+                                                <button type="button" class="btn btn-info btn-tg tc" data-toggle="modal" data-target="#myModal">Add To Cart</button>';
                                       } else {
                                         echo ' <p style="color:red;font-weight:bold;font-size:25px">BẠN CHƯA ĐĂNG NHẬP</p>';
                                       }
