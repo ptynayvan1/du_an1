@@ -204,17 +204,20 @@
                                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                                             </div>
                                             <div class="modal-body">
-                                            <form action="">
+                                            <form method="post" action="index.php?act=thuexe" >
                                               <center> <h1>ĐƠN HÀNG</h1></center>
                                                 <h3>Ngày Đặt</h3>
                                                 <input type="date" name="ngaydat">
                                                 <h3>Ngày Trả</h3>
                                                 <input type="date" name="ngaytra">
-                                            </form>
+                                                <input type="hidden" value="<?=$ctxe['id_xe']?>" name="idxe">
+                                                <div class="modal-footer" style="margin-top: 15px;">
+                                            <button  class="btn btn-default" >Hoàn Tất</button>
                                             </div>
-                                            <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Hoàn Tất</button>
+                                                </form>
                                             </div>
+                                            
+                                      
                                         </div>
                                         </div>
                                     </div>

@@ -35,6 +35,18 @@
       $view="./site/views/ctxe.php";
       require_once "./site/layout.php";
     break;
+    case 'thuexe':
+      if (isset($_POST['ngaydat'])&&isset($_POST['ngaytra'])&&isset($_POST['idxe'])) {
+        $ngaydat=$_POST['ngaydat'];
+        $ngaytra=$_POST['ngaytra'];
+        $idnd=$_SESSION['id'];
+        $idxe=$_POST['idxe'];
+        thuexe($idnd,$idxe,$ngaydat,$ngaytra);
+      } else {
+        echo 'Dữ liệu chưa nhập đủ';
+      }
+      
+    break;
     case "thembl":
       $id_nguoidung=$_SESSION['id'];
       $id_xe=$_POST['id'];
@@ -74,11 +86,11 @@
     $qg=$_POST['qg'];
     $cmnd=$_POST['cmnd'];
     $hoten=$_POST['hoten'];
-    themngd($hoten,$matkhau,$tendn,$sdt,$dc,$tp,$qg,$email,$cmnd);
+    $check=themngd($hoten,$matkhau,$tendn,$sdt,$dc,$tp,$qg,$email,$cmnd);
     $_SESSION['user']=$tendn;
-    $_SESSION['id']=$check['Id_nguoidung'];
+    $_SESSION['id']=$check;
     header("location: index.php");
-
+   
   }
   else{
     $a='<script>

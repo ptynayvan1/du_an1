@@ -35,6 +35,51 @@
         color: white;
         border-radius: 5px;
     }
+    .tttk{
+    background-color: none !important;
+    }
+    .aaa{
+        position: relative;
+    }
+    li{
+        padding-bottom: 20px ;
+    }
+    .tttk::after{
+    content: " ";
+    height: 20px;
+    top: -20px;
+    left: calc(80% - 70px);
+    position: absolute;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #b5f8f8;
+    display: inline-block;
+    }
+    .tttk{
+    display: none;   
+    margin: 0 auto;
+    text-align: left;
+    position: absolute;
+    background-color: #b5f8f8;
+    width: auto;
+    min-width: 196px;
+    z-index: 15;
+    list-style: none;
+    margin: 0px;
+    padding: 10px 0px;
+    border-radius: 0px 0px 3px 3px;
+    box-shadow: rgba(0, 0, 0, 0.18) 0px 6px 12px 0px;
+    position: absolute;
+    top: 45px;
+    left: calc(50% + 10px);
+    transform: translateX(-50%);
+    }
+    li:hover .tttk{
+        display: block;
+    }
+    .tttk p{
+        padding-left: 15px;
+    }
 </style>
 <body>
     <div class="site-wrap" id="home-section">
@@ -70,14 +115,20 @@
                                 <li><a href="testimonials.html" class="nav-link">Các Đánh Giá</a></li>
                                 <li><a href="history_p.html" class="nav-link">Xe Đã Thuê</a></li>
                                 <li>
+                                <div class="aaa">
                                 <?php
                                 if (isset($_SESSION['user'])) {
-                                echo '<a href="index.php?act=logout" class=" dk nav-link"> Đăng xuất</a>';
+                                echo '<p class="dk" style="color:black">'.$_SESSION['user'].'</p>
+                                <div class="tttk">
+                                <p><a href="">Thông tin tài khoản</a></p>
+                                <p><a href="index.php?act=logout">Đăng xuất</a></p>
+                                <p><a href="">Đơn hàng của tôi</a></p>
+                                </div>';
                                 }else{
-                                    echo '<a href="index.php?act=login1" class=" dk nav-link">Đăng nhập</a>';
+                                    echo '<a href="index.php?act=login1" class="dk nav-link"  style="color:black">Đăng nhập</a>';
                                 }
-                                ?></li>
-                        <li><a href="index.php?act=signup" class=" dk nav-link">Đăng kí</a></li>
+                                ?></div></li>
+                        <li><a href="index.php?act=signup" style="color: black;" class="dk nav-link">Đăng kí</a></li>
                               
                                 
                             </ul>

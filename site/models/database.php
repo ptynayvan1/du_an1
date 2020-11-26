@@ -26,6 +26,13 @@
             return $row;
 
         }
+        function postid($sql){
+            $connect=getConnection();
+            $result=$connect->exec($sql);
+            
+            $last_id = $connect->lastInsertId();
+            return $last_id;
+        }
         function execute($sql)
         {
             $connect=getConnection();
