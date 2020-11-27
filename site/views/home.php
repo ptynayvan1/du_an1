@@ -7,7 +7,9 @@
         min-height: 500px;
         object-fit: cover;
       }
-
+      .tenxe{
+          height: 35px;
+      }
   </style>
 <div class="site-section">
             <div class="container">
@@ -43,8 +45,8 @@
                             <img src="./site/views/images/<?=$k['hinh_xe']?>" alt="Image" class="img-fluid" onerror="this.src='./site/views/images/hinhloi.jpg'">
                         </div>
                         <div class="listing-contents h-100">
-                            <a href="listing.html">
-                                <h3><a href="index.php?act=ctxe&idxe=<?=$k['id_xe']?>"><?=$k['Ten_xe']?></a> </h3>
+                            <a href="listing.html" >
+                                <h3 class="tenxe"><a href="index.php?act=ctxe&idxe=<?=$k['id_xe']?>"><?=$k['Ten_xe']?></a> </h3>
                             </a>
                             <div>
                             <p>Số lượt xem : <?=$k['Soluotxem']?></p>
