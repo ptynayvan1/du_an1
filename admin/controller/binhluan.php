@@ -13,7 +13,9 @@
         case 'delete':
             $id=$_GET['id'];
             detelecomment($id);
-            header('location:index.php?ctrl=binhluan');
+            echo '<script type="text/javascript">
+                window.location="index.php?ctrl=binhluan";
+            </script>';
         break;
         default:
         break;

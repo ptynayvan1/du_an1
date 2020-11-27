@@ -36,16 +36,25 @@
       require_once "./site/layout.php";
     break;
     case 'thuexe':
-      if (isset($_POST['ngaydat'])&&isset($_POST['ngaytra'])&&isset($_POST['idxe'])) {
+      if ($_POST['ngaydat']!=''&&$_POST['ngaytra']!=''&&$_POST['idxe']!='') {
         $ngaydat=$_POST['ngaydat'];
         $ngaytra=$_POST['ngaytra'];
         $idnd=$_SESSION['id'];
         $idxe=$_POST['idxe'];
         thuexe($idnd,$idxe,$ngaydat,$ngaytra);
+        unset($_SESSION['cb_thuexe']);
+        header("location:index.php");
       } else {
-        echo 'Dữ liệu chưa nhập đủ';
+        $_SESSION['cb_thuexe']="<script>alert('Xin mời nhập đầy đủ dữ liệu')</script>";
+        // $view="./site/views/ctxe.php";
+        // require_once "./site/layout.php";
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
       }
       
+    break;
+    case "dathue":
+      $view="./site/views/dathue.php";
+      require_once "./site/layout.php";
     break;
     case "thembl":
       $id_nguoidung=$_SESSION['id'];

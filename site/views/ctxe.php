@@ -110,6 +110,9 @@
                 <div class="preview col-md-6">
                     <div class="preview-pic tab-content">
                         <?php
+                        if(isset($_SESSION['cb_thuexe'])){
+                            echo $_SESSION['cb_thuexe'];
+                        }
                         $i=1;
                         foreach ($manganh as $k) {
                             if ($i!=1) {

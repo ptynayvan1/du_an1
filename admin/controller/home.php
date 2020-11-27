@@ -1,1 +1,1 @@
-<center><h1>Nhóm 2</h1></center>
+<center><h1>CarRental Poly</h1></center>

@@ -11,7 +11,7 @@
                   <th scope="col">Tên User</th>
                   <th scope="col">Cmt</th>
                   <th scope="col">Date</th>
-                  <th scope="col"></th>
+                  <th scope="col">Action</th>
                 </tr>
               </thead>
              <?php
@@ -25,7 +25,7 @@
                   <td>
                     <a href="index.php?ctrl=binhluan&action=delete&id='.$conn['Id_binhluan'].'" class="btn btn-warning">Xoá</a>
                   </td>
-                <td></td>
+                
               </tr>
        
                 ';
