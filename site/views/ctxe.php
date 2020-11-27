@@ -81,6 +81,17 @@
     .btn2 img {
         width: 100%;
     }
+    .tc{
+        margin-left: 10px;
+        height: 45px;
+        background-color:red;
+    }
+    .btn {
+        margin-top: 15px;
+    }
+    .price {
+        margin-top: 15px;
+    }
 </style>
 </style>
 <script>
@@ -177,9 +188,7 @@
                                     <div class="stars"> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star"></span> <span class="fa fa-star"></span>
                                     </div> <span class="review-no">Số lượt xem : <?=$ctxe['Soluotxem']?></span>
                                 </div>
-                                <p class="product-description"></p><?=$ctxe['mota']?></p>
-                                  <h4 class="price">Giá Thuê: <span><?=number_format($ctxe['Gia_thue'],0,'.','.')?>VNĐ/ngày</span></h4>
-                                </p>
+    
                                 <table>
                                 <p>ĐẶC ĐIỂM</p>
                                 <h6>Số ghế: <?=$ctxe['Loaixe']?></h6>
@@ -187,10 +196,13 @@
                                
                                 <h5>Nhiên liệu: <?=$ctxe['Nhien_lieu']?></h5>
                                     <!-- Trigger the modal with a button -->
+                                <p class="product-description"></p><?=$ctxe['mota']?></p>
+                                  <h4 class="price">Giá Thuê: <span><?=number_format($ctxe['Gia_thue'],0,'.','.')?>VNĐ/ngày</span></h4>
+                                </p>    
                                     <?php
                                      if (isset($_SESSION['user'])) { 
                                         echo '  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Thuê Xe Ngay</button>
-                                                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Add To Cart</button>';
+                                                <button type="button" class="btn btn-info btn-tg tc" data-toggle="modal" data-target="#myModal">Add To Cart</button>';
                                       } else {
                                         echo ' <p style="color:red;font-weight:bold;font-size:25px">BẠN CHƯA ĐĂNG NHẬP</p>';
                                       }

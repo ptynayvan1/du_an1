@@ -80,6 +80,10 @@
     .tttk p{
         padding-left: 15px;
     }
+    .maps{
+        margin-top: -20px;
+
+    }
 </style>
 <body>
 <div class="zalo-chat-widget" data-oaid="2510410834034303264" data-welcome-message="Rất vui khi được hỗ trợ bạn!" data-autopopup="0" data-width="350" data-height="420"></div>
@@ -116,7 +120,10 @@
                                 <li class="active"><a href="index.php" class="nav-link">Home</a></li>
                                 <li><a href="index.php?act=ctxe&idxe" class="nav-link">Danh Sách Xe</a></li>
                                 <li><a href="testimonials.html" class="nav-link">Các Đánh Giá</a></li>
+<<<<<<< HEAD
                                 <li><a href="index.php?act=dathue" class="nav-link">Xe Đã Thuê</a></li>
+=======
+>>>>>>> f5df35a562bb58ee8a16a3a15111e25305f27223
                                 <li>
                                 <div class="aaa">
                                 <?php
@@ -280,7 +287,6 @@
     <script src="./site/views/js/jquery.easing.1.3.js"></script>
     <script src="./site/views/js/bootstrap-datepicker.min.js"></script>
     <script src="./site/views/js/aos.js"></script>
-
     <script src="./site/views/js/main.js"></script>
 
 </body>
