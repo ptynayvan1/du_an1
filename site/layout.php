@@ -80,6 +80,10 @@
     .tttk p{
         padding-left: 15px;
     }
+    .maps{
+        margin-top: -20px;
+
+    }
 </style>
 <body>
     <div class="site-wrap" id="home-section">
@@ -113,7 +117,6 @@
                                 <li class="active"><a href="index.php" class="nav-link">Home</a></li>
                                 <li><a href="index.php?act=ctxe&idxe" class="nav-link">Danh Sách Xe</a></li>
                                 <li><a href="testimonials.html" class="nav-link">Các Đánh Giá</a></li>
-                                <li><a href="history_p.html" class="nav-link">Xe Đã Thuê</a></li>
                                 <li>
                                 <div class="aaa">
                                 <?php
@@ -277,7 +280,6 @@
     <script src="./site/views/js/jquery.easing.1.3.js"></script>
     <script src="./site/views/js/bootstrap-datepicker.min.js"></script>
     <script src="./site/views/js/aos.js"></script>
-
     <script src="./site/views/js/main.js"></script>
 
 </body>
