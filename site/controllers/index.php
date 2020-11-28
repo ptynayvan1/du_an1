@@ -53,6 +53,7 @@
       
     break;
     case "dathue":
+      $xedt=dhdaxong($_SESSION['id']);
       $view="./site/views/dathue.php";
       require_once "./site/layout.php";
     break;
@@ -68,6 +69,7 @@
     
     break;
     case "login":
+      unset($_SESSION['loidn']);
       $user=$_POST['user'];
       $pass=$_POST['pass'];
     $check=checkdn($user,$pass);
@@ -76,12 +78,16 @@
       $_SESSION['id']=$check['Id_nguoidung'];
       header("location: index.php");
     }else{
-      header("location: index.php?act=login");
+      $_SESSION['loidn']='<script>
+      alert("Tài khoản đăng nhập không chính xác");
+    </script>';
+      header("location: index.php?act=login1");
     }
   break;
   case "logout":
     unset($_SESSION['user']);
     unset($_SESSION['id']);
+    unset($_SESSION['loidn']);
     header("location: index.php");
   break;
   case "signup_":

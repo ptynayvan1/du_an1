@@ -86,7 +86,32 @@
     }
 </style>
 <body>
-<div class="zalo-chat-widget" data-oaid="2510410834034303264" data-welcome-message="Rất vui khi được hỗ trợ bạn!" data-autopopup="0" data-width="350" data-height="420"></div>
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+      <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            xfbml            : true,
+            version          : 'v9.0'
+          });
+        };
+
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+
+      <!-- Your Chat Plugin code -->
+      <div class="fb-customerchat"
+        attribution=setup_tool
+        page_id="101787621779851"
+  logged_in_greeting="Chào mừng đến của hàng cho thuê xe của chúng tôi"
+  logged_out_greeting="Chào mừng đến của hàng cho thuê xe của chúng tôi">
+      </div>
+<!-- <div class="zalo-chat-widget" data-oaid="2510410834034303264" data-welcome-message="Rất vui khi được hỗ trợ bạn!" data-autopopup="0" data-width="350" data-height="420"></div> -->
 
 <script src="https://sp.zalo.me/plugins/sdk.js"></script>
     <div class="site-wrap" id="home-section">
@@ -120,10 +145,7 @@
                                 <li class="active"><a href="index.php" class="nav-link">Home</a></li>
                                 <li><a href="index.php?act=ctxe&idxe" class="nav-link">Danh Sách Xe</a></li>
                                 <li><a href="testimonials.html" class="nav-link">Các Đánh Giá</a></li>
-<<<<<<< HEAD
                                 <li><a href="index.php?act=dathue" class="nav-link">Xe Đã Thuê</a></li>
-=======
->>>>>>> f5df35a562bb58ee8a16a3a15111e25305f27223
                                 <li>
                                 <div class="aaa">
                                 <?php

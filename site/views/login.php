@@ -59,7 +59,11 @@
 </style>
 </head>
 <body>
-	
+	<?php
+	if (isset($_SESSION['loidn'])) {
+		echo $_SESSION['loidn'];
+	}
+	?>
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
@@ -93,7 +97,6 @@
 							Login
 						</button>
 					</div>
-
 					<div class="text-center p-t-12">
 						<span class="txt1">
 							Forgot
