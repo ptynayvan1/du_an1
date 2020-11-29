@@ -1,7 +1,7 @@
 <?php
 include_once('database.php');
-function getAllctdh($madh){
-    $sql="select*from chitietdonhang where madh='$madh' order by madh ";
+function getAllctdh($id){
+    $sql="select*from don_hang where Id_donhang='$id' order by Id_donhang ";
     return query($sql);
 }
 ?>

@@ -7,7 +7,7 @@
           <table class="table table-striped table">
               <thead>
                 <tr class="p-6 mb-2 bg-danger text-white">
-                  <th scope="col">Mã loại</th>
+                  <th scope="col">Id</th>
                   <th scope="col">Tên loại</th>
                   <th scope="col">Địa chỉ</th>
                   <th scope="col">Năm sản xuất</th>

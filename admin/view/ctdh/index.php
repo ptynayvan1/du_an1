@@ -10,7 +10,8 @@
                   <th scope="col"></th>
                   <th scope="col">Mã đơn hàng</th>
                   <th scope="col">Mã Xe</th>
-                  <th scope="col">Số Lượng </th>
+                  <th scope="col">Id_nguoidung</th>
+                  <th scope="col">date</th>
                 </tr>
               </thead>
         
@@ -19,10 +20,10 @@
                 echo'
                 <tr>
                 <td></td>
-                <td>'.$oa['madh'].'</td>
-                <td>'.$oa['masp'].'</td>
-                <td>'.$oa['soluong'].'</td>
-                <td></td>
+                <td>'.$oa['Id_donhang'].'</td>
+                <td>'.$oa['Id_xe'].'</td>
+                <td>'.$oa['Id_nguoidung'].'</td>
+                <td>'.$oa['Ngay_thue'].'</td>
               </tr>
        
                 ';
