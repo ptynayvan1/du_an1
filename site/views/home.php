@@ -127,19 +127,6 @@
                         <h2 class="mb-0 text-white">Bạn còn chờ gì nữa?</h2>
                         <p class="mb-0 opa-7">Thuê Ngay Một Chiếc Xe Bạn Thích Đi Nào.</p>
                     </div>
-                    <div class="col-lg-5 text-md-right">
-
-
-                        <div class="form-control-wrap">
-                            <input type="text" id="cf-3" placeholder="Bắt Đầu" class="form-control datepicker px-3">
-                            <span class="icon icon-date_range"></span>
-
-                        </div>
-                        <div class="form-control-wrap">
-                            <input type="text" id="cf-3" placeholder="Kết Thúc" class="form-control datepicker px-3">
-                            <span class="icon icon-date_range"></span>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
