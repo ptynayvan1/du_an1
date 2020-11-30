@@ -21,6 +21,10 @@ function themngd($hoten,$matkhau,$tendn,$sdt,$dc,$tp,$qg,$email,$cmnd){
     , '$sdt', '$dc', '$tp', '$qg', '1', '$cmnd');";
    return postid($sql);
 }
+function dhdaxong($idnd){
+    $sql="SELECT * FROM `don_hang` INNER JOIN xe ON xe.id_xe=don_hang.Id_xe WHERE trangthai=1 AND Id_nguoidung=$idnd";
+    return query($sql);
+}
 function getbinhluan($id){
     $sql="SELECT * FROM binh_luan INNER JOIN nguoi_dung ON binh_luan.Id_nguoidung = nguoi_dung.Id_nguoidung WHERE id_xe='$id' ORDER BY Id_binhluan";
     return query($sql);

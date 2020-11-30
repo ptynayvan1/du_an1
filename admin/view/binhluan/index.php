@@ -25,7 +25,11 @@
                   <td>
                     <a href="index.php?ctrl=binhluan&action=delete&id='.$conn['Id_binhluan'].'" class="btn btn-warning">Xoá</a>
                   </td>
+<<<<<<< HEAD
                
+=======
+                
+>>>>>>> 900a80cdd140cbd3b0800f432c638f4534c9ee37
               </tr>
        
                 ';

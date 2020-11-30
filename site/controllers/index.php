@@ -36,16 +36,26 @@
       require_once "./site/layout.php";
     break;
     case 'thuexe':
-      if (isset($_POST['ngaydat'])&&isset($_POST['ngaytra'])&&isset($_POST['idxe'])) {
+      if ($_POST['ngaydat']!=''&&$_POST['ngaytra']!=''&&$_POST['idxe']!='') {
         $ngaydat=$_POST['ngaydat'];
         $ngaytra=$_POST['ngaytra'];
         $idnd=$_SESSION['id'];
         $idxe=$_POST['idxe'];
         thuexe($idnd,$idxe,$ngaydat,$ngaytra);
+        unset($_SESSION['cb_thuexe']);
+        header("location:index.php");
       } else {
-        echo 'Dữ liệu chưa nhập đủ';
+        $_SESSION['cb_thuexe']="<script>alert('Xin mời nhập đầy đủ dữ liệu')</script>";
+        // $view="./site/views/ctxe.php";
+        // require_once "./site/layout.php";
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
       }
       
+    break;
+    case "dathue":
+      $xedt=dhdaxong($_SESSION['id']);
+      $view="./site/views/dathue.php";
+      require_once "./site/layout.php";
     break;
     case "thembl":
       $id_nguoidung=$_SESSION['id'];
@@ -59,6 +69,7 @@
     
     break;
     case "login":
+      unset($_SESSION['loidn']);
       $user=$_POST['user'];
       $pass=$_POST['pass'];
     $check=checkdn($user,$pass);
@@ -67,12 +78,16 @@
       $_SESSION['id']=$check['Id_nguoidung'];
       header("location: index.php");
     }else{
-      header("location: index.php?act=login");
+      $_SESSION['loidn']='<script>
+      alert("Tài khoản đăng nhập không chính xác");
+    </script>';
+      header("location: index.php?act=login1");
     }
   break;
   case "logout":
     unset($_SESSION['user']);
     unset($_SESSION['id']);
+    unset($_SESSION['loidn']);
     header("location: index.php");
   break;
   case "signup_":

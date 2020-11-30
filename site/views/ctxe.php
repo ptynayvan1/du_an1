@@ -121,6 +121,9 @@
                 <div class="preview col-md-6">
                     <div class="preview-pic tab-content">
                         <?php
+                        if(isset($_SESSION['cb_thuexe'])){
+                            echo $_SESSION['cb_thuexe'];
+                        }
                         $i=1;
                         foreach ($manganh as $k) {
                             if ($i!=1) {
@@ -243,7 +246,7 @@
                     Bình luận
                 </div>
                 <div class="panel-body mt-3">
-                  <input type="hidden" id="id_xe" name="id_xe" value="<?=$row['id_xe']?>">
+                  <input type="hidden" id="id_xe" name="id_xe" value="<?=$ctxe['id_xe']?>">
                     <?php
                     if (isset($_SESSION['user'])) { 
                       echo '<textarea class="form-control" id="comment" placeholder="Viết bình luận....." rows="3"></textarea>

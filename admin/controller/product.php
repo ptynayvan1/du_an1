@@ -22,13 +22,13 @@ $action='index';
             $price=$_POST['price'];
             $moTa=$_POST['moTa'];
             $img=$_FILES['productImage']['name'];//lay ten hinh
-//         $path='../site/image/'.$img;
-//         if(move_uploaded_file($_FILES['productImage']['tmp_name'],$path)){
-//             addProduct($catalogId,$name,$img,$price,$date,$mota)
-//         }
-//         echo '<script type="text/javascript">
-//         window.location="index.php?ctrl=product";
-// </script>';
+        $path='../site/image/'.$img;
+        if(move_uploaded_file($_FILES['productImage']['tmp_name'],$path)){
+            addProduct($catalogId,$name,$img,$price,$date,$mota);
+        }
+        echo '<script type="text/javascript">
+        window.location="index.php?ctrl=product";
+</script>';
             addProduct($cateId,$name,$img,$price,$date,$moTa);
             break;
             case 'delte':
