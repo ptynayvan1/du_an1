@@ -26,8 +26,14 @@
         width: 300px;
         font-size: 13pt;
         }
+   
     .site-logo strong{
         font-size: 20pt;
+        text-decoration: none;
+    }
+
+    .col-3 a:hover {
+        text-decoration: none;
     }
     .dk{
         padding: 8px 15px !important;
@@ -145,7 +151,6 @@
                                 <li class="active"><a href="index.php" class="nav-link">Home</a></li>
                                 <li><a href="index.php?act=ctxe&idxe" class="nav-link">Danh Sách Xe</a></li>
                                 <li><a href="testimonials.html" class="nav-link">Các Đánh Giá</a></li>
-                                <li><a href="index.php?act=dathue" class="nav-link">Xe Đã Thuê</a></li>
                                 <li>
                                 <div class="aaa">
                                 <?php

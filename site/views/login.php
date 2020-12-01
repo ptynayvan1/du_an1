@@ -77,7 +77,7 @@
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="user" placeholder="Tên tài khoản">
+						<input class="input100" type="text" name="user" placeholder="Tên tài khoản" pattern="[a-z]{1,20}" title="nhập các kí tự 'a-z' và 0-9">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-envelope" aria-hidden="true"></i>
@@ -94,15 +94,15 @@
 					
 					<div class="container-login100-form-btn">
 						<button type="submit" class="login100-form-btn">
-							Login
+						Đăng Nhập
 						</button>
 					</div>
 					<div class="text-center p-t-12">
 						<span class="txt1">
-							Forgot
+							lấy Lại
 						</span>
 						<a class="txt2" href="#">
-							Username / Password?
+							tài khoản / Mật khẩu?
 						</a>
 					</div>
 
@@ -114,7 +114,7 @@
 					</div>
 					<div class="text-center w-full p-t-20 p-b-22">
 					<span class="txt1">
-					Or login with
+					Đăng nhập bằng
 					</span>
 					</div>
 					<a href="https://www.facebook.com/dialog/oauth?client_id=854383925392425&redirect_uri=http://localhost/GitHub/du_an1/callback.php&scope=public_profile" class="btn-face m-b-10">

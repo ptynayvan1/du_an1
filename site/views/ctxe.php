@@ -92,6 +92,9 @@
     .price {
         margin-top: 15px;
     }
+    .fa{
+        margin-bottom: 10px;
+    }
 </style>
 </style>
 <script>
