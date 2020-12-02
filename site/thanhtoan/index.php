@@ -33,7 +33,7 @@ h3.co {
 body {
 	font-family: Verdana, Arial, sans-serif;
 	font-size: 10pt;
-	color: #08185A background-color : #FFFFFF
+	color: #08185A background-color: #FFFFFF;
 }
 
 a:link {

@@ -257,7 +257,7 @@
                       <button type="button" class="btn btn-info pull-right comment">Bình luận</button>
                       <div class="clearfix"></div>';
                     } else {
-                      echo 'BẠN CHƯA ĐĂNG NHẬP';
+                      echo '<a href="index.php?ctrl=login">BẠN CHƯA ĐĂNG NHẬP</a>';
                     }
                     
                     ?>

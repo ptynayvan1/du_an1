@@ -162,10 +162,12 @@
                                 <p><a href="index.php?act=dathue">Đơn hàng của tôi</a></p>
                                 </div>';
                                 }else{
-                                    echo '<a href="index.php?act=login1" class="dk nav-link"  style="color:black">Đăng nhập</a>';
+                                    echo '<a href="index.php?act=login1" class="dk nav-link"  style="color:black">Đăng nhập</a>
+                                            <li><a href="index.php?act=signup" style="color: black;" class="dk nav-link">Đăng kí</a></li>
+                                        ';
                                 }
                                 ?></div></li>
-                        <li><a href="index.php?act=signup" style="color: black;" class="dk nav-link">Đăng kí</a></li>
+                        
                               
                                 
                             </ul>
