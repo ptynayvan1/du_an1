@@ -189,25 +189,28 @@
                     <h3 class="product-title" style="color: black; font-weight: bolder;"><?=$ctxe['Ten_xe']?></h3>
                                 <div class="rating">
                                     <div class="stars"> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star"></span> <span class="fa fa-star"></span>
-                                    </div> <span class="review-no">Số lượt xem : <?=$ctxe['Soluotxem']?></span>
+                                    </div> <span class="review-no" style="color: brown; font-size: 15pt">Số lượt xem : <?=$ctxe['Soluotxem']?></span>
                                 </div>
     
                                 <table>
-                                <p>ĐẶC ĐIỂM</p>
-                                <h6>Số ghế: <?=$ctxe['Loaixe']?></h6>
-                                <span>Tinh nang: <?=$ctxe['tinh_nang']?></span>
-                               
-                                <h5>Nhiên liệu: <?=$ctxe['Nhien_lieu']?></h5>
+                                <h4> <span style="font-weight: bold; opacity:0.8;" >Số ghế: </span> <?=$ctxe['Loaixe']?></h4>
+                                <h4> <span style="font-weight: bold; opacity:0.8;" >Tính năng: </span> <?=$ctxe['tinh_nang']?></h4>
+                                <h4> <span style="font-weight: bold; opacity:0.8;" >Nhiên liệu: </span> <?=$ctxe['Nhien_lieu']?></h4>
+                                <h4> <span style="font-weight: bold; opacity:0.8;" >GIẤY TỜ THUÊ XE (BẢN GỐC): </span> CMND và GPLX (đối chiếu)</h4>
+                                <h4> <span style="font-weight: bold; opacity:0.8;" >TÀI SẢN THẾ CHẤP: </span> 15 triệu (tiền mặt/chuyển khoản cho chủ xe khi nhận xe)hoặc Xe máy (kèm cà vẹt gốc) giá trị 15 triệu</h4>
+                                <h4> <span style="font-weight: bold; opacity:0.8;" >ĐIỀU KHOẢN: </span> 1. Chấp nhận Hộ khẩu Thành phố/KT3 Thành phố/Hộ khẩu tỉnh/Passport (Bản gốc) (Giữ lại khi nhận xe)2. Tài sản đặt cọc (1 trong 2 hình thức)- Xe máy (giá trị >15t) + Cà vẹt (bản gốc)- Hoặc cọc tiền mặt 15 triệu.</h4>
+
                                     <!-- Trigger the modal with a button -->
                                 <p class="product-description"></p><?=$ctxe['mota']?></p>
-                                  <h4 class="price">Giá Thuê: <span><?=number_format($ctxe['Gia_thue'],0,'.','.')?>VNĐ/ngày</span></h4>
+                                <h4 class="price">Giá Thuê: <span><?=number_format($ctxe['Gia_thue'],0,'.','.')?>VNĐ/ngày</span></h4>
                                 </p>    
+                                
                                     <?php
                                      if (isset($_SESSION['user'])) { 
                                         echo '  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Thuê Xe Ngay</button>
                                                 <button type="button" class="btn btn-info btn-tg tc" data-toggle="modal" data-target="#myModal">Add To Cart</button>';
                                       } else {
-                                        echo ' <p style="color:red;font-weight:bold;font-size:25px">BẠN CHƯA ĐĂNG NHẬP</p>';
+                                        echo ' <p ><a href="index.php?act=login1" style="color:red;font-weight:bold;font-size:25px">BẠN CHƯA ĐĂNG NHẬP</a></p>';
                                       }
                                     ?>
 
@@ -233,9 +236,7 @@
                                             <button  class="btn btn-default" >Hoàn Tất</button>
                                             </div>
                                                 </form>
-                                            </div>
-                                            
-                                      
+                                            </div>                                     
                                         </div>
                                         </div>
                                     </div>
