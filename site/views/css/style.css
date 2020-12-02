@@ -366,6 +366,10 @@ h5,
     font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
+table {
+    border-collapse: collapse;
+}
+
 .form-control:active,
 .form-control:focus {
     border-color: #0779e4;

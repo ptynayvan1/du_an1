@@ -159,7 +159,7 @@
                                 <div class="tttk">
                                 <p><a href="">Thông tin tài khoản</a></p>
                                 <p><a href="index.php?act=logout">Đăng xuất</a></p>
-                                <p><a href="">Đơn hàng của tôi</a></p>
+                                <p><a href="index.php?act=dathue">Đơn hàng của tôi</a></p>
                                 </div>';
                                 }else{
                                     echo '<a href="index.php?act=login1" class="dk nav-link"  style="color:black">Đăng nhập</a>';

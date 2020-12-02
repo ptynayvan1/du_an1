@@ -57,6 +57,19 @@
       $view="./site/views/dathue.php";
       require_once "./site/layout.php";
     break;
+    case 'thanhtoan':
+      $id=$_GET['id'];
+      $gia=$_GET['gia']*100;
+      $donhang=ttdh($id);
+      // $first_date = strtotime($donhang['ngay_tra']);
+      // $second_date = strtotime($donhang['Ngay_thue']);
+      // $datediff = abs($first_date - $second_date);
+      // $ngay=floor($datediff/(60*60*24));
+      // $gia=$donhang['Gia_thue']*$ngay*100;
+      $view="./site/thanhtoan/index.php";
+      require_once "./site/layout.php";
+    
+    break;
     case "thembl":
       $id_nguoidung=$_SESSION['id'];
       $id_xe=$_POST['id'];

@@ -16,13 +16,17 @@ function thuexe($idnd,$idxe,$ngaythue,$ngaytra){
     $sql="INSERT INTO `don_hang` (`Id_donhang`, `Id_nguoidung`, `Id_xe`, `Ngay_thue`, `ngay_tra`) VALUES (NULL, '$idnd', '$idxe', '$ngaythue', '$ngaytra')";
     execute($sql);
 }
+function ttdh($id){
+    $sql="SELECT * FROM `don_hang` INNER JOIN xe ON don_hang.Id_xe=xe.id_xe WHERE Id_donhang=$id";
+    queryOne($sql);
+}
 function themngd($hoten,$matkhau,$tendn,$sdt,$dc,$tp,$qg,$email,$cmnd){
     $sql="INSERT INTO `nguoi_dung` (`Id_nguoidung`, `ten_dangnhap`, `mat_khau`, `ho_ten`, `email`, `sdt`, `dia_chi`, `thanh_pho`, `quoc_gia`, `id_vaitro`, `cmnd`) VALUES (NULL, '$tendn', '$matkhau', '$hoten', '$email'
     , '$sdt', '$dc', '$tp', '$qg', '1', '$cmnd');";
    return postid($sql);
 }
 function dhdaxong($idnd){
-    $sql="SELECT * FROM `don_hang` INNER JOIN xe ON xe.id_xe=don_hang.Id_xe WHERE trangthai=1 AND Id_nguoidung=$idnd";
+    $sql="SELECT * FROM `don_hang` INNER JOIN xe ON xe.id_xe=don_hang.Id_xe WHERE Id_nguoidung=$idnd";
     return query($sql);
 }
 function getbinhluan($id){
