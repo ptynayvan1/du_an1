@@ -1,12 +1,16 @@
 <?php
 require_once "./site/models/database.php";
 function showxe(){
-$sql="SELECT * FROM `xe`";
+$sql="SELECT * FROM `xe` limit 9";
 return query($sql);
 }
 function ctxe($id){
     $sql="SELECT * FROM `xe` INNER JOIN loai_xe ON loai_xe.Id_loaixe=xe.Id_loaixe WHERE id_xe=$id";
     return queryOne($sql);
+}
+function dsxe(){
+    $sql="SELECT * FROM `xe` ";
+    return query($sql);
 }
 function anhxe($anhxe){
     $manganh=explode(",",$anhxe);
@@ -76,5 +80,27 @@ function timkiem($hx,$lx){
     
     
     return query($sql);
+}
+function ctimkiem($hx,$lx){
+    if ($hx!="") {
+        $shx="xe.Id_hangxe= $hx";
+      
+    } else {
+        $shx="";
+    }
+    if ($lx!="") {
+        $slx="xe.Id_loaixe=$lx";
+    } else {
+        $slx="";
+      
+    }
+    if ($slx!=""&&$shx!="") {
+        $sql="SELECT * FROM `xe` INNER JOIN hang_xe ON xe.Id_hangxe=hang_xe.Id_hangxe  INNER JOIN loai_xe ON xe.Id_loaixe=loai_xe.Id_loaixe WHERE $shx AND $slx ";
+    } else {
+        $sql="SELECT * FROM `xe` INNER JOIN hang_xe ON xe.Id_hangxe=hang_xe.Id_hangxe  INNER JOIN loai_xe ON xe.Id_loaixe=loai_xe.Id_loaixe WHERE $shx $slx";
+    }
+    
+    
+    return queryOne($sql);
 }
 ?>

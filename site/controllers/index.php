@@ -23,6 +23,7 @@
       }
       
       $timkiem=timkiem($hx,$lx);
+      $checktk=ctimkiem($hx,$lx);
       $view="./site/views/timkiem.php";
       require_once "./site/layout.php";
      
@@ -80,6 +81,11 @@
     case "login1":
       require_once "./site/views/login.php";
     
+    break;
+    case 'dsxe':
+      $timkiem=dsxe();
+      $view="./site/views/timkiem.php";
+      require_once "./site/layout.php";
     break;
     case "login":
       unset($_SESSION['loidn']);

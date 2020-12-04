@@ -6,10 +6,12 @@
 </style>
 <div class="row" style=" margin-bottom:-120px;margin-top:80px">         
                 <?php
-                if (isset($timkiem)) {
+               
+                if (is_array($checktk)) {
+                    echo $checktk['Tenhang'].$checktk['Loaixe'];
                    foreach ($timkiem as $k) {?>
                          <div class="col-md-6 col-lg-4 mb-4">
-
+                        
 <div class="listing d-block  align-items-stretch">
     <div class="listing-img h-100 mr-4">
         
