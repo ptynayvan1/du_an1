@@ -19,7 +19,8 @@
     <link rel="stylesheet" href="./site/views/css/aos.css">
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="./site/views/css/style.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 <style>
     .site-logo{
@@ -88,7 +89,10 @@
     }
     .maps{
         margin-top: -20px;
-
+        width: 350px;
+    }
+    .ft{
+        margin-top: 50px;
     }
 </style>
 <body>
@@ -155,10 +159,10 @@
                                 <div class="aaa">
                                 <?php
                                 if (isset($_SESSION['user'])){
-                                echo '<p class="dk" style="color:black">'.$_SESSION['user'].'</p>
+                                echo '<p class="dk" style="color:black"><i class="fas fa-user-tie" style="font-size:24px; margin-right: 10px;"></i>'.$_SESSION['user'].'</p>
                                 <div class="tttk">
                                 <p><a href="">Thông tin tài khoản</a></p>
-                                <p><a href="index.php?act=logout">Đăng xuất</a></p>
+                                <p><i class="fas fa-power-off" style="font-size:15px;margin-right: 10px;"></i><a href="index.php?act=logout">Đăng xuất</a></p>
                                 <p><a href="index.php?act=dathue">Đơn hàng của tôi</a></p>
                                 </div>';
                                 }else{
@@ -265,7 +269,7 @@
                             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15675.210986536726!2d106.6085871697754!3d10.826402200000008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1svi!2s!4v1605169971153!5m2!1svi!2s" width="100%" height="320" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                         </div>
                     </div>
-                    <div class="col-lg-8 ml-auto">
+                    <div class="col-lg-8 ml-auto ft">
                         <div class="row">
                             <div class="col-lg-3">
                                 <h2 class="footer-heading mb-4">Chính sách</h2>

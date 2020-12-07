@@ -5,6 +5,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 <style>
     .container-fliud{
@@ -94,6 +96,13 @@
     }
     .fa{
         margin-bottom: 10px;
+    }
+    .product-description p{
+        background-color: slateblue;
+    }
+    .btn-info{
+        font-weight: bold;    
+           
     }
 </style>
 </style>
@@ -185,30 +194,30 @@
                     
                 </div>
                 <div class="details col-md-6">
-                    <div class="form-thuexe" style="width:80%; height: 550px; margin-bottom: 20px">
+                    <div class="form-thuexe" style="width:80%; height: 550px; margin-bottom: 100px">
                     <h3 class="product-title" style="color: black; font-weight: bolder;"><?=$ctxe['Ten_xe']?></h3>
                                 <div class="rating">
                                     <div class="stars"> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star"></span> <span class="fa fa-star"></span>
-                                    </div> <span class="review-no" style="color: brown; font-size: 15pt">Số lượt xem : <?=$ctxe['Soluotxem']?></span>
+                                    </div> <span class="review-no" style="color: brown; font-size: 15pt;font-weight: bold;  ">Số lượt xem : <?=$ctxe['Soluotxem']?></span>
                                 </div>
     
                                 <table>
-                                <h4> <span style="font-weight: bold; opacity:0.8;" >Số ghế: </span> <?=$ctxe['Loaixe']?></h4>
-                                <h4> <span style="font-weight: bold; opacity:0.8;" >Tính năng: </span> <?=$ctxe['tinh_nang']?></h4>
-                                <h4> <span style="font-weight: bold; opacity:0.8;" >Nhiên liệu: </span> <?=$ctxe['Nhien_lieu']?></h4>
-                                <h4> <span style="font-weight: bold; opacity:0.8;" >GIẤY TỜ THUÊ XE (BẢN GỐC): </span> CMND và GPLX (đối chiếu)</h4>
-                                <h4> <span style="font-weight: bold; opacity:0.8;" >TÀI SẢN THẾ CHẤP: </span> 15 triệu (tiền mặt/chuyển khoản cho chủ xe khi nhận xe)hoặc Xe máy (kèm cà vẹt gốc) giá trị 15 triệu</h4>
-                                <h4> <span style="font-weight: bold; opacity:0.8;" >ĐIỀU KHOẢN: </span> 1. Chấp nhận Hộ khẩu Thành phố/KT3 Thành phố/Hộ khẩu tỉnh/Passport (Bản gốc) (Giữ lại khi nhận xe)2. Tài sản đặt cọc (1 trong 2 hình thức)- Xe máy (giá trị >15t) + Cà vẹt (bản gốc)- Hoặc cọc tiền mặt 15 triệu.</h4>
+                                <h4><i class="fa fa-car"style="margin-right: 10px;"></i> <span style="font-weight: bold; opacity:0.8;" >Số ghế: </span> <?=$ctxe['Loaixe']?></h4>
+                                <h4><i class="fab fa-bluetooth-b" style="margin-right: 10px;"></i><span style="font-weight: bold; opacity:0.8;" >Tính năng: </span> <?=$ctxe['tinh_nang']?></h4>
+                                <h4><i class="fas fa-band-aid fa-fw" style="margin-right: 10px;"></i><span style="font-weight: bold; opacity:0.8;" >Nhiên liệu: </span> <?=$ctxe['Nhien_lieu']?></h4>
+                                <h4><i class='fas fa-address-card' style=' margin-right: 10px;'></i> <span style="font-weight: bold; opacity:0.8;" >GIẤY TỜ THUÊ XE (BẢN GỐC): </span> CMND và GPLX (đối chiếu)</h4>
+                                <h4> <i class='fas fa-tags' style='margin-right: 10px;'></i><span style="font-weight: bold; opacity:0.8;" >TÀI SẢN THẾ CHẤP: </span> 15 triệu (tiền mặt/chuyển khoản cho chủ xe khi nhận xe)hoặc Xe máy (kèm cà vẹt gốc) giá trị 15 triệu</h4>
+                                <h4><i class='fas fa-hands-helping'style='margin-right: 10px;'></i> <span style="font-weight: bold; opacity:0.8;" >ĐIỀU KHOẢN: </span><p> 1. Chấp nhận Hộ khẩu Thành phố/KT3 Thành phố/Hộ khẩu tỉnh/Passport (Bản gốc) (Giữ lại khi nhận xe)</p>2. Tài sản đặt cọc (1 trong 2 hình thức)- Xe máy (giá trị >15t) + Cà vẹt (bản gốc)- Hoặc cọc tiền mặt 15 triệu.</h4>
 
                                     <!-- Trigger the modal with a button -->
-                                <p class="product-description"></p><?=$ctxe['mota']?></p>
-                                <h4 class="price">Giá Thuê: <span><?=number_format($ctxe['Gia_thue'],0,'.','.')?>VNĐ/ngày</span></h4>
+                                <p class="product-description"><span style="font-weight: bold; opacity:0.8;" >MÔ TẢ: </span><?=$ctxe['mota']?></p>
+                                <h4 class="price"> <i class='fas fa-hand-holding-usd' style='color:red; margin-right: 10px;'></i>Giá Thuê: <span><?=number_format($ctxe['Gia_thue'],0,'.','.')?>VNĐ/ngày</span></h4>
                                 </p>    
                                 
                                     <?php
                                      if (isset($_SESSION['user'])) { 
-                                        echo '  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Thuê Xe Ngay</button>
-                                                <button type="button" class="btn btn-info btn-tg tc" data-toggle="modal" data-target="#myModal">Add To Cart</button>';
+                                        echo '  <button type="button" class="btn btn-info btn-lg " data-toggle="modal" data-target="#myModal"><i class="fas fa-american-sign-language-interpreting" style="font-size:25px; margin-right: 10px;"></i>Thuê Xe Ngay</button>
+                                                <button type="button" class="btn btn-info btn-tg tc" data-toggle="modal" data-target="#myModal"><i class="fas fa-tools" style="font-size:24px; margin-right: 10px;"></i>Add To Cart</button>';
                                       } else {
                                         echo ' <p ><a href="index.php?act=login1" style="color:red;font-weight:bold;font-size:25px">BẠN CHƯA ĐĂNG NHẬP</a></p>';
                                       }
