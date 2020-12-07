@@ -18,28 +18,54 @@
                 </tr>
               </thead>
         
-             <?php
+              <?php
                foreach($order as $od){
-                 echo '
-                    <tr>
-                    
-                      <td>'.$od['Id_donhang'].'</td>
-                      <td>'.$od['Id_nguoidung'].'</td>
-                      <td>'.$od['Id_xe'].'</td>
-                      <td>'.$od['Ngay_thue'].'</td>
-                      <td>padding</td>
-                      <td class="text-center">
-                      <a href="" class="btn btn-danger">cancel</a>
-                      <a href="" class="btn btn-success">confirm</a>
-                      <a href="index.php?ctrl=ctdh&action=chitietdonhang&id='.$od['Id_donhang'].'" class="btn btn-info">Chi tiết đơn hàng</a>
-                      </td>
-                    </tr>
-                 ';
-               }
-             ?> 
-        
+              ?>
+            <?php
+              echo '<tr>';
+              echo '<td>'.$od['Id_donhang'].'</td>';
+              echo '<td>'.$od['Id_nguoidung'].'</td>';
+              echo '<td>'.$od['Id_xe'].'</td>';
+              echo '<td>'.$od['Ngay_thue'].'</td>';
+              echo '<td>'.$od['trang_thai'].'</td>';
+              if($od['trang_thai'] == 'padding'){
+                echo '<td style="text-align:center;"><a href="index.php?ctrl=donhang&action=cancel&id='.$od['Id_donhang'].'" class="btn btn-danger">cancel</a>
+                  <a href="index.php?ctrl=donhang&action=confirm&id='.$od['Id_donhang'].'" class="btn btn-success">confirm</a>
+                  <a href="index.php?ctrl=ctdh&action=chitietdonhang&id='.$od['Id_donhang'].'" class="btn btn-info">Chi tiết đơn hàng</a>
+                  </td>
+                ';
+              }elseif($od['trang_thai'] == 'Canceled'){
+                echo '<td style="text-align:center;"><a  href="#"  class="btn btn-danger btn-xs" disabled>Cancelled</a>
+                <a href="index.php?ctrl=ctdh&action=chitietdonhang&id='.$od['Id_donhang'].'" class="btn btn-info">Chi tiết đơn hàng</a>
+                </td>';
+              }else{
+                echo '<td style="text-align:center;">
+                        <a href="#"  class="btn btn-success btn-xs" disabled>Confirmed</a>
+                        <a href="index.php?ctrl=ctdh&action=chitietdonhang&id='.$od['Id_donhang'].'" class="btn btn-info">Chi tiết đơn hàng</a>
+                </td>';
+              }
+            //   <tr>
+            //   <td>'.$od['Id_donhang'].'</td>
+            //   <td>'.$od['Id_nguoidung'].'</td>
+            //   <td>'.$od['Id_xe'].'</td>
+            //   <td>'.$od['Ngay_thue'].'</td>
+            //   <td>'.$od['trang_thai'].'</td>
+            //   <td class="text-center">
+            //   if('.$tt.' == 'padding'){
+            //     <a href="index.php?ctrl=donhang&action=cancel&id='.$od['Id_donhang'].'" class="btn btn-danger">cancel</a>
+            //     <a href="index.php?ctrl=donhang&action=confirm&id='.$od['Id_donhang'].'" class="btn btn-success">confirm</a>
+            //   }elseif('.$od['trang_thai'].' == 'Canceled'){
+            //     <a  href="#"  class="btn btn-danger btn-xs" disabled>Cancelled</a>
+            //   }else{
+            //     <a href="#"  class="btn btn-success btn-xs" disabled>Confirmed</a>
+            //   }
+            //   </td>
+            // </tr>
+               
+            }
+             ?>
             </table>
           </div>
      
         </form>
-      
+       

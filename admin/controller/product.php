@@ -50,14 +50,14 @@ $action='index';
         $mota=$_POST['mota'];
         $address = $_POST['address'];
         $img=$_FILES['productImage']['name'];//lay ten hinh
-        $path='../site/image/'.$img;
-//         if(move_uploaded_file($_FILES['productImage']['tmp_name'],$path)){
-//         addProduct($id,$name, $img);
-//         }
-//         updateproduct($id,$name,$img);
-//         echo '<script type="text/javascript">
-//         window.location="index.php?ctrl=product";
-// </script>';
+        $path='../site/images/'.$img;
+        if(move_uploaded_file($_FILES['productImage']['tmp_name'],$path)){
+            addProduct($catalogId,$name,$img,$price,$date,$moTa);
+        }
+        updateproduct($id,$name,$img,$date,$mota,$address);
+        echo '<script type="text/javascript">
+        window.location="index.php?ctrl=product";
+</script>';
         updateproduct($id,$name,$img,$date,$mota,$address);
         echo '<script type="text/javascript">
                 window.location="index.php?ctrl=product";

@@ -17,5 +17,13 @@ function deteleOrder($mahd){
     $sql="delete from don_hang where id_donhang='$mahd'";
     return execute($sql);
 }
+function updateCancel($id){
+    $sql="UPDATE don_hang SET trang_thai='Canceled' where Id_donhang='$id'";
+    return execute($sql);
+}
+function updateConfirm($id){
+    $sql="UPDATE don_hang SET trang_thai='Confirmed' where Id_donhang='$id'";
+    return execute($sql);
+}
 
 ?>

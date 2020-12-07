@@ -3,11 +3,12 @@
         <div class="card-header">
           QUẢN LÝ XE
         </div>
-       
+      
           <table class="table table-striped table">
               <thead>
                 <tr class="p-6 mb-2 bg-danger text-white">
-                  <th scope="col">Id</th>
+              
+                  <th scope="col">Image</th>
                   <th scope="col">Tên loại</th>
                   <th scope="col">Địa chỉ</th>
                   <th scope="col">Năm sản xuất</th>
@@ -15,12 +16,16 @@
 
                 </tr>
               </thead>
+             
           <tbody>
+            
              <?php
                foreach($products as $kia){
                 echo'
+                
                 <tr>   
-                  <td>'.$kia['id_xe'].'</td>
+                
+                  <td><p><img src="../site/views/images/'.$kia['hinh_xe'].'" alt="" width="200px;"></p></td>
                   <td>'.$kia['Ten_xe'].'</td>
                   <td>'.$kia['diachixe'].'</td>
                   <td>'.$kia['Namsx'].'</td>

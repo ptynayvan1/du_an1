@@ -29,6 +29,20 @@ switch($action){
                     window.location="index.php?ctrl=donhang";
             </script>';
     break;
+    case 'cancel':
+        $id=$_GET['id'];
+        updateCancel($id);
+        echo '<script type="text/javascript">
+                    window.location="index.php?ctrl=donhang";
+            </script>';
+    break;
+    case 'confirm':
+        $id=$_GET['id'];
+        updateConfirm($id);
+        echo '<script type="text/javascript">
+                    window.location="index.php?ctrl=donhang";
+            </script>';
+    break;
     default:
     break;
 
