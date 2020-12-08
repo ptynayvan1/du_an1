@@ -60,11 +60,10 @@
     break;
     case 'thanhtoan':
       $id=$_POST['id'];
-      $_SESSION['iddh']=$id;
       $donhang=ttdh($id);
       // $vnp_Url = "http://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
        $vnp_Url = "http://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
-      $vnp_Returnurl = "https://duan1.huy/index.php?act=savethanhtoan";
+      $vnp_Returnurl = "https://duan1.huy?act=savethanhtoan";
       $vnp_TmnCode = "WBXUAR2N"; 
       $vnp_HashSecret = "MMNURKPPAXBRAMUAWRVQRIJBPWHEAVGA";
       
@@ -117,41 +116,7 @@
      header('Location: ' . $returnData['data']);
   
     break;
-    case 'savethanhtoan':
-      $vnp_SecureHash = $_GET['vnp_SecureHash'];
-      $inputData = array();
-      foreach ($_GET as $key => $value) {
-          $inputData[$key] = $value;
-      }
-      unset($inputData['vnp_SecureHashType']);
-      unset($inputData['vnp_SecureHash']);
-      ksort($inputData);
-      $i = 0;
-      $hashData = "";
-      foreach ($inputData as $key => $value) {
-          if ($i == 1) {
-              $hashData = $hashData . '&' . $key . "=" . $value;
-          } else {
-              $hashData = $hashData . $key . "=" . $value;
-              $i = 1;
-          }
-      }
-      
-      $secureHash = hash('sha256',$vnp_HashSecret . $hashData);
-      if ($secureHash == $vnp_SecureHash) {
-          if ($_GET['vnp_ResponseCode'] == '00') {
-            capnhatdh($_SESSION['id']);
-            unset($_SESSION['id']);
-              echo "GD Thanh cong";
-              header('Location: index.php?act=dathue');
-          } else {
-              echo "GD Khong thanh cong";
-          }
-      } else {
-          echo "Chu ky khong hop le";
-      }
-            header('Location: index.php?act=dathue');
-            break;
+  
     case 'thanhtoan1':
       $id=$_GET['id'];
       $gia=$_GET['gia'];

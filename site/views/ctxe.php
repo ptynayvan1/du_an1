@@ -226,19 +226,6 @@
                                 </div>
     
                                 <table>
-<<<<<<< HEAD
-                                <h4> <span style="font-weight: bold; opacity:0.8;" >Số ghế: </span> <?=$ctxe['Loaixe']?></h4>
-                                <h4> <span style="font-weight: bold; opacity:0.8;" >Tính năng: </span> <?=$ctxe['tinh_nang']?></h4>
-                                <h4> <span style="font-weight: bold; opacity:0.8;" >Nhiên liệu: </span> <?=$ctxe['Nhien_lieu']?></h4>
-                               
-
-                                    <!-- Trigger the modal with a button -->
-                                <p class="product-description"></p><?=$ctxe['mota']?></p>
-                                <h4 class="price">Giá Thuê: <span><?=number_format($ctxe['Gia_thue'],0,'.','.')?>VNĐ/ngày</span></h4>
-                                <h5> <span style="font-weight: bold; opacity:0.8;" >GIẤY TỜ THUÊ XE (BẢN GỐC): </span> CMND và GPLX (đối chiếu)</h5>
-                                <h5> <span style="font-weight: bold; opacity:0.8;" >TÀI SẢN THẾ CHẤP: </span> 15 triệu (tiền mặt/chuyển khoản cho chủ xe khi nhận xe)hoặc Xe máy (kèm cà vẹt gốc) giá trị 15 triệu</h5>
-                                <h5> <span style="font-weight: bold; opacity:0.8;" >ĐIỀU KHOẢN: </span> <br>1. Chấp nhận Hộ khẩu Thành phố/KT3 Thành phố/Hộ khẩu tỉnh/Passport (Bản gốc) (Giữ lại khi nhận xe) <br>2. Tài sản đặt cọc (1 trong 2 hình thức)- Xe máy (giá trị >15t) + Cà vẹt (bản gốc)- Hoặc cọc tiền mặt 15 triệu.</h5>
-=======
                                 <h4><i class="fa fa-car"style="margin-right: 10px;"></i> <span style="font-weight: bold; opacity:0.8;" >Số ghế: </span> <?=$ctxe['Loaixe']?></h4>
                                 <h4><i class="fab fa-bluetooth-b" style="margin-right: 10px;"></i><span style="font-weight: bold; opacity:0.8;" >Tính năng: </span> <?=$ctxe['tinh_nang']?></h4>
                                 <h4><i class="fas fa-band-aid fa-fw" style="margin-right: 10px;"></i><span style="font-weight: bold; opacity:0.8;" >Nhiên liệu: </span> <?=$ctxe['Nhien_lieu']?></h4>
@@ -249,7 +236,6 @@
                                     <!-- Trigger the modal with a button -->
                                 <p class="product-description"><span style="font-weight: bold; opacity:0.8;" >MÔ TẢ: </span><?=$ctxe['mota']?></p>
                                 <h4 class="price"> <i class='fas fa-hand-holding-usd' style='color:red; margin-right: 10px;'></i>Giá Thuê: <span><?=number_format($ctxe['Gia_thue'],0,'.','.')?>VNĐ/ngày</span></h4>
->>>>>>> b98c966edc4421a00a37f5f6a9010ff3b8bd1ee6
                                 </p>    
                                 
                                     <?php
@@ -290,6 +276,8 @@
                             </table>
                     </div>
                 </div>
+                <div class="container" style="margin-top: 50px;">
+                <div class="row">
                 <div class=" col-10">
         <div class="comment-wrapper">
             <div class="panel panel-info">
@@ -346,7 +334,7 @@
             </div>
         </div>
 
-    </div>
+    </div></div></div>
             </div>
         </div>
        

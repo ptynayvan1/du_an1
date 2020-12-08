@@ -7,7 +7,7 @@
 }
 </style>
 <div class="container mt-5">
-    <form action="index.php?act=thanhtoan" method="post">
+    <form action="http://duan1.huy/site/views/vnpay_create_payment.php" method="post">
 <div class="mb-3">
   <label for="exampleFormControlInput2" class="form-label">Họ tên</label>
   <input type="text" class="form-control" name="hoten" id="exampleFormControlInput1" placeholder="" value="<?=$ttcn['ho_ten']?>">
