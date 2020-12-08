@@ -46,7 +46,7 @@
 <td><?=number_format($gia,'0','.','.')?>VNĐ</td>
 <?php
 if ($ctt==1) {
-  echo '<td><button class="btn btn-success"><a href="index.php?act=thanhtoan&id='.$xe['Id_donhang'].'&gia='.$gia.'">Thanh toán</a></button></td>';
+  echo '<td><button class="btn btn-success"><a href="index.php?act=thanhtoan1&id='.$xe['Id_donhang'].'&gia='.$gia.'">Thanh toán</a></button></td>';
 }else{
   echo '<td></td>';
 }

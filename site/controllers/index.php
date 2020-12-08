@@ -59,17 +59,124 @@
       require_once "./site/layout.php";
     break;
     case 'thanhtoan':
-      $id=$_GET['id'];
-      $gia=$_GET['gia']*100;
+      $id=$_POST['id'];
+      $_SESSION['iddh']=$id;
       $donhang=ttdh($id);
-      // $first_date = strtotime($donhang['ngay_tra']);
-      // $second_date = strtotime($donhang['Ngay_thue']);
-      // $datediff = abs($first_date - $second_date);
-      // $ngay=floor($datediff/(60*60*24));
-      // $gia=$donhang['Gia_thue']*$ngay*100;
-      $view="./site/thanhtoan/index.php";
+      // $vnp_Url = "http://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
+       $vnp_Url = "http://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
+      $vnp_Returnurl = "https://duan1.huy/index.php?act=savethanhtoan";
+      $vnp_TmnCode = "WBXUAR2N"; 
+      $vnp_HashSecret = "MMNURKPPAXBRAMUAWRVQRIJBPWHEAVGA";
+      
+      $vnp_TxnRef = date('YmdHis');
+      $vnp_OrderInfo = "Thanh toán thuê xe".$id;
+      $vnp_OrderType = "Thuê xe";
+      $vnp_Amount = $_POST['gia'] * 100;
+      $vnp_Locale = "vn";
+      $vnp_IpAddr = $_SERVER['REMOTE_ADDR'];
+      $vnp_BankCode = $_POST['bank_code'];
+      $inputData = array(
+          "vnp_Version" => "2.0.0",
+          "vnp_TmnCode" => $vnp_TmnCode,
+          "vnp_Amount" => $vnp_Amount,
+          "vnp_Command" => "pay",
+          "vnp_CreateDate" => date('YmdHis'),
+          "vnp_CurrCode" => "VND",
+          "vnp_IpAddr" => $vnp_IpAddr,
+          "vnp_Locale" => $vnp_Locale,   
+          "vnp_OrderInfo" => $vnp_OrderInfo,
+          "vnp_OrderType" => $vnp_OrderType,
+          "vnp_ReturnUrl" => $vnp_Returnurl,
+          "vnp_TxnRef" => $vnp_TxnRef,    
+      );
+      if (isset($vnp_BankCode) && $vnp_BankCode != "") {
+        $inputData['vnp_BankCode'] = $vnp_BankCode;
+     }
+      ksort($inputData);
+      $query = "";
+      $i = 0;
+      $hashdata = "";
+      foreach ($inputData as $key => $value) {
+          if ($i == 1) {
+              $hashdata .= '&' . $key . "=" . $value;
+          } else {
+              $hashdata .= $key . "=" . $value;
+              $i = 1;
+          }
+          $query .= urlencode($key) . "=" . urlencode($value) . '&';
+      }
+      
+      $vnp_Url = $vnp_Url . "?" . $query;
+      if (isset($vnp_HashSecret)) {
+          $vnpSecureHash = hash('sha256',$vnp_HashSecret . $hashdata);
+          $vnp_Url .= 'vnp_SecureHashType=SHA256&vnp_SecureHash=' . $vnpSecureHash;
+      }
+      $returnData = array(
+        'code' => '00', 'message' => 'success', 'data' => $vnp_Url
+     );
+     header('Location: ' . $returnData['data']);
+  
+    break;
+    case 'savethanhtoan':
+      $vnp_SecureHash = $_GET['vnp_SecureHash'];
+      $inputData = array();
+      foreach ($_GET as $key => $value) {
+          $inputData[$key] = $value;
+      }
+      unset($inputData['vnp_SecureHashType']);
+      unset($inputData['vnp_SecureHash']);
+      ksort($inputData);
+      $i = 0;
+      $hashData = "";
+      foreach ($inputData as $key => $value) {
+          if ($i == 1) {
+              $hashData = $hashData . '&' . $key . "=" . $value;
+          } else {
+              $hashData = $hashData . $key . "=" . $value;
+              $i = 1;
+          }
+      }
+      
+      $secureHash = hash('sha256',$vnp_HashSecret . $hashData);
+      if ($secureHash == $vnp_SecureHash) {
+          if ($_GET['vnp_ResponseCode'] == '00') {
+            capnhatdh($_SESSION['id']);
+            unset($_SESSION['id']);
+              echo "GD Thanh cong";
+              header('Location: index.php?act=dathue');
+          } else {
+              echo "GD Khong thanh cong";
+          }
+      } else {
+          echo "Chu ky khong hop le";
+      }
+            header('Location: index.php?act=dathue');
+            break;
+    case 'thanhtoan1':
+      $id=$_GET['id'];
+      $gia=$_GET['gia'];
+      $donhang=ttdh($id);
+      $ttcn=ttcn($_SESSION['id']);
+      $view="./site/views/thanhtoan.php";
       require_once "./site/layout.php";
-    
+    break;
+    case 'ttcn':
+    $id=$_SESSION['id'];
+    $ttcn=ttcn($id);
+    $view="./site/views/ttcn.php";
+    require_once "./site/layout.php";
+    break;
+    case 'capnhat':
+    $id=$_SESSION['id'];   
+   $tendn=$_POST['tendn'];
+   $hoten=$_POST['hoten'];
+   $email=$_POST['email'];
+   $sdt=$_POST['sdt'];
+   $diachi=$_POST['diachi'];
+   $tp=$_POST['tp'];
+   $cmnd=$_POST['cmnd'];
+   capnhat($id,$tendn,$hoten,$email,$sdt,$diachi,$tp,$cmnd);
+   header("location: index.php");
     break;
     case "thembl":
       $id_nguoidung=$_SESSION['id'];
@@ -83,6 +190,7 @@
     
     break;
     case 'dsxe':
+      $checktk=ctimkiem1();
       $timkiem=dsxe();
       $view="./site/views/timkiem.php";
       require_once "./site/layout.php";
@@ -139,4 +247,8 @@ header("location: index.php?act=signup");
     require_once "./site/layout.php";
   break;
   }
-?>
+?><!-- Ngân hàng	NCB
+Số thẻ	9704198526191432198
+Tên chủ thẻ	NGUYEN VAN A
+Ngày phát hành	07/15
+Mật khẩu OTP	123456 -->
