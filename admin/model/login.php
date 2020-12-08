@@ -1,8 +1,8 @@
-<?php
-    function checkuser($user,$pass){
-        $sql="Select * form admin where username='.$user.' and pass='.$pass.'";
-        $conn=connect();
-       return queryone($sql);
+<?php 
+    include_once('database.php');
+    function checkdn($admin,$pass){
+        $sql="select * from nguoi_dung where ten_dangnhap='$admin' and mat_khau='$pass'";
+        return queryOne($sql);
     }
 
 ?>

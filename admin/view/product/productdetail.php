@@ -15,7 +15,10 @@
               <p><span style="font-weight:bold;">Địa chỉ xe: </span>'. $p['diachixe'].' </p>
               <p><span style="font-weight:bold;">Năm sản xuât:</span> '. $p['Namsx'].' </p>
               <p><span style="font-weight:bold;">Số lượt xem:</span> '. $p['Soluotxem'].' </p>
-              <p><span style="font-weight:bold;">Image:</span> '. $p['hinh_xe'].' </p>
+              <p>
+                <p style="font-weight:bold;">Image:</p>
+              <img src="../site/views/images/'.$p['hinh_xe'].'" alt="">
+              </p>
               ';
            ?>
               
@@ -25,4 +28,5 @@
                     <a href="index.php?ctrl=product&action=edit&id=<?php echo $p['id_xe']?>" class="btn btn-primary">Sửa</a>
               </div>
         </div>
+    
       </div>

@@ -10,6 +10,15 @@
       .tenxe{
           height: 35px;
       }
+      .col-md-6 :hover{
+        background-color: bisque;
+        transition: 0.5s;
+        
+      }
+      .btn-sm:hover{
+        background-color:lightcoral;
+        transition: 0.1s;
+      }
   </style>
 <div class="site-section">
             <div class="container">
