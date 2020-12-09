@@ -19,8 +19,24 @@
     <link rel="stylesheet" href="./site/views/css/aos.css">
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="./site/views/css/style.css">
+<<<<<<< HEAD
+    <script src="./site/views/js/jquery-3.3.1.min.js"></script>
+    <script src="./site/views/js/popper.min.js"></script>
+    <script src="./site/views/js/bootstrap.min.js"></script>
+    <script src="./site/views/js/owl.carousel.min.js"></script>
+    <script src="./site/views/js/jquery.sticky.js"></script>
+    <script src="./site/views/js/jquery.waypoints.min.js"></script>
+    <script src="./site/views/js/jquery.animateNumber.min.js"></script>
+    <script src="./site/views/js/jquery.fancybox.min.js"></script>
+    <script src="./site/views/js/jquery.easing.1.3.js"></script>
+    <script src="./site/views/js/bootstrap-datepicker.min.js"></script>
+    <script src="./site/views/js/aos.js"></script>
+    <script src="./site/views/js/main.js"></script>
+    <script src="./site/views/js/jquery-ui.js"></script>
+=======
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+>>>>>>> b98c966edc4421a00a37f5f6a9010ff3b8bd1ee6
 </head>
 <style>
     .site-logo{
@@ -161,7 +177,12 @@
                                 if (isset($_SESSION['user'])){
                                 echo '<p class="dk" style="color:black"><i class="fas fa-user-tie" style="font-size:24px; margin-right: 10px;"></i>'.$_SESSION['user'].'</p>
                                 <div class="tttk">
+<<<<<<< HEAD
                                 <p><a href="index.php?act=user">Thông tin tài khoản</a></p>
+=======
+                                
+                                <p><a href="index.php?act=ttcn">Thông tin tài khoản</a></p>
+>>>>>>> 1c37b83cf8e679fee2b36321f9965e480be2b7ad
                                 <p><i class="fas fa-power-off" style="font-size:15px;margin-right: 10px;"></i><a href="index.php?act=logout">Đăng xuất</a></p>
                                 <p><a href="index.php?act=dathue">Đơn hàng của tôi</a></p>
                                 </div>';
@@ -309,18 +330,7 @@
 
     </div>
 
-    <script src="./site/views/js/jquery-3.3.1.min.js"></script>
-    <script src="./site/views/js/popper.min.js"></script>
-    <script src="./site/views/js/bootstrap.min.js"></script>
-    <script src="./site/views/js/owl.carousel.min.js"></script>
-    <script src="./site/views/js/jquery.sticky.js"></script>
-    <script src="./site/views/js/jquery.waypoints.min.js"></script>
-    <script src="./site/views/js/jquery.animateNumber.min.js"></script>
-    <script src="./site/views/js/jquery.fancybox.min.js"></script>
-    <script src="./site/views/js/jquery.easing.1.3.js"></script>
-    <script src="./site/views/js/bootstrap-datepicker.min.js"></script>
-    <script src="./site/views/js/aos.js"></script>
-    <script src="./site/views/js/main.js"></script>
+
 
 </body>
 

@@ -5,6 +5,10 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
@@ -125,6 +129,26 @@
         }
         slider.src = images[num];
     }
+  
+              $(document).ready(function() {
+    let id = $("#id_xe").val();
+    console.log(id);
+    $(".comment").click(function() {
+
+        let comment = $("#comment").val();
+        if (comment != "" && id > 0) {
+            $.ajax({
+                type: "POST",
+                url: "index.php?act=thembl",
+                data: { id: id, comment: comment },
+                success: function(data) {
+                    location.reload();
+                }
+            });
+        }
+    });
+})
+
 </script>
     <div class="container">
    
@@ -202,6 +226,19 @@
                                 </div>
     
                                 <table>
+<<<<<<< HEAD
+                                <h4> <span style="font-weight: bold; opacity:0.8;" >Số ghế: </span> <?=$ctxe['Loaixe']?></h4>
+                                <h4> <span style="font-weight: bold; opacity:0.8;" >Tính năng: </span> <?=$ctxe['tinh_nang']?></h4>
+                                <h4> <span style="font-weight: bold; opacity:0.8;" >Nhiên liệu: </span> <?=$ctxe['Nhien_lieu']?></h4>
+                               
+
+                                    <!-- Trigger the modal with a button -->
+                                <p class="product-description"></p><?=$ctxe['mota']?></p>
+                                <h4 class="price">Giá Thuê: <span><?=number_format($ctxe['Gia_thue'],0,'.','.')?>VNĐ/ngày</span></h4>
+                                <h5> <span style="font-weight: bold; opacity:0.8;" >GIẤY TỜ THUÊ XE (BẢN GỐC): </span> CMND và GPLX (đối chiếu)</h5>
+                                <h5> <span style="font-weight: bold; opacity:0.8;" >TÀI SẢN THẾ CHẤP: </span> 15 triệu (tiền mặt/chuyển khoản cho chủ xe khi nhận xe)hoặc Xe máy (kèm cà vẹt gốc) giá trị 15 triệu</h5>
+                                <h5> <span style="font-weight: bold; opacity:0.8;" >ĐIỀU KHOẢN: </span> <br>1. Chấp nhận Hộ khẩu Thành phố/KT3 Thành phố/Hộ khẩu tỉnh/Passport (Bản gốc) (Giữ lại khi nhận xe) <br>2. Tài sản đặt cọc (1 trong 2 hình thức)- Xe máy (giá trị >15t) + Cà vẹt (bản gốc)- Hoặc cọc tiền mặt 15 triệu.</h5>
+=======
                                 <h4><i class="fa fa-car"style="margin-right: 10px;"></i> <span style="font-weight: bold; opacity:0.8;" >Số ghế: </span> <?=$ctxe['Loaixe']?></h4>
                                 <h4><i class="fab fa-bluetooth-b" style="margin-right: 10px;"></i><span style="font-weight: bold; opacity:0.8;" >Tính năng: </span> <?=$ctxe['tinh_nang']?></h4>
                                 <h4><i class="fas fa-band-aid fa-fw" style="margin-right: 10px;"></i><span style="font-weight: bold; opacity:0.8;" >Nhiên liệu: </span> <?=$ctxe['Nhien_lieu']?></h4>
@@ -212,6 +249,7 @@
                                     <!-- Trigger the modal with a button -->
                                 <p class="product-description"><span style="font-weight: bold; opacity:0.8;" >MÔ TẢ: </span><?=$ctxe['mota']?></p>
                                 <h4 class="price"> <i class='fas fa-hand-holding-usd' style='color:red; margin-right: 10px;'></i>Giá Thuê: <span><?=number_format($ctxe['Gia_thue'],0,'.','.')?>VNĐ/ngày</span></h4>
+>>>>>>> b98c966edc4421a00a37f5f6a9010ff3b8bd1ee6
                                 </p>    
                                 
                                     <?php
@@ -237,9 +275,9 @@
                                             <form method="post" action="index.php?act=thuexe" >
                                               <center> <h1>ĐƠN HÀNG</h1></center>
                                                 <h3>Ngày Đặt</h3>
-                                                <input type="date" name="ngaydat">
+                                                <input type="text" name="ngaydat" id="datepicker" placeholder="Ngày giao" class="from" readonly>
                                                 <h3>Ngày Trả</h3>
-                                                <input type="date" name="ngaytra">
+                                                <input type="text" placeholder="Ngày trả" name="ngaytra"  class="to" readonly>
                                                 <input type="hidden" value="<?=$ctxe['id_xe']?>" name="idxe">
                                                 <div class="modal-footer" style="margin-top: 15px;">
                                             <button  class="btn btn-default" >Hoàn Tất</button>
@@ -313,24 +351,30 @@
         </div>
        
     </div>
-    <script>
-              $(document).ready(function() {
-    let id = $("#id_xe").val();
-    console.log(id);
-    $(".comment").click(function() {
-
-        let comment = $("#comment").val();
-        if (comment != "" && id > 0) {
-            $.ajax({
-                type: "POST",
-                url: "index.php?act=thembl",
-                data: { id: id, comment: comment },
-                success: function(data) {
-                    location.reload();
-                }
-            });
+   <script>
+//         $( function() {
+//     $( "#datepicker" ).datepicker({ minDate: -1, maxDate: "+1M +10D" });
+//   } );
+      $(document).ready(function() {
+   $(".from").datepicker({
+        defaultDate: "+1w",
+        changeMonth: true,
+        numberOfMonths: 1,
+        minDate: 0,
+        dateFormat: 'yy-mm-dd',
+        onClose: function(selectedDate) {
+            $(".to").datepicker("option", "minDate", selectedDate);
         }
     });
-
-});
-    </script>
+    $(".to").datepicker({
+        defaultDate: "+1w",
+        changeMonth: true,
+        numberOfMonths: 1,
+        minDate: 0,
+        dateFormat: 'yy-mm-dd',
+        onClose: function(selectedDate) {
+            $(".from").datepicker("option", "maxDate", selectedDate);
+        }
+    });
+})
+  </script>

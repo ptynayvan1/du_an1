@@ -12,6 +12,10 @@ function dsxe(){
     $sql="SELECT * FROM `xe` ";
     return query($sql);
 }
+function ctimkiem1(){
+    $sql="SELECT * FROM `xe` INNER JOIN hang_xe ON xe.Id_hangxe=hang_xe.Id_hangxe  INNER JOIN loai_xe ON xe.Id_loaixe=loai_xe.Id_loaixe";
+    return queryOne($sql);
+}
 function anhxe($anhxe){
     $manganh=explode(",",$anhxe);
     return $manganh;
@@ -20,9 +24,13 @@ function thuexe($idnd,$idxe,$ngaythue,$ngaytra){
     $sql="INSERT INTO `don_hang` (`Id_donhang`, `Id_nguoidung`, `Id_xe`, `Ngay_thue`, `ngay_tra`) VALUES (NULL, '$idnd', '$idxe', '$ngaythue', '$ngaytra')";
     execute($sql);
 }
+function capnhatdh($id){
+    $sql="UPDATE `don_hang` SET `trangthai` = '1' WHERE `don_hang`.`Id_donhang` = $id";
+    return execute($sql);
+}
 function ttdh($id){
     $sql="SELECT * FROM `don_hang` INNER JOIN xe ON don_hang.Id_xe=xe.id_xe WHERE Id_donhang=$id";
-    queryOne($sql);
+    return queryOne($sql);
 }
 function themngd($hoten,$matkhau,$tendn,$sdt,$dc,$tp,$qg,$email,$cmnd){
     $sql="INSERT INTO `nguoi_dung` (`Id_nguoidung`, `ten_dangnhap`, `mat_khau`, `ho_ten`, `email`, `sdt`, `dia_chi`, `thanh_pho`, `quoc_gia`, `id_vaitro`, `cmnd`) VALUES (NULL, '$tendn', '$matkhau', '$hoten', '$email'
@@ -107,5 +115,13 @@ function ctimkiem($hx,$lx){
     
     
     return queryOne($sql);
+}
+function ttcn($id){
+    $sql="SELECT * FROM `nguoi_dung` WHERE nguoi_dung.Id_nguoidung=$id";
+    return queryOne($sql);
+}
+function capnhat($id,$tendn,$hoten,$email,$sdt,$diachi,$tp,$cmnd){
+    $sql="UPDATE `nguoi_dung` SET `ten_dangnhap`='$tendn',`ho_ten`='$hoten',`email`='$email',`sdt`='$sdt',`dia_chi`='$diachi',`thanh_pho`='$tp',`cmnd`='$cmnd' WHERE `Id_nguoidung`=$id";
+    return execute($sql);
 }
 ?>
