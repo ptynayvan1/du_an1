@@ -45,6 +45,11 @@ function checkuser($user){
     $sql="select * from nguoi_dung where ten_dangnhap ='$user'";
    return queryOne($sql);
 }
+
+function getUser($id){
+    $sql="SELECT * FROM nguoi_dung WHERE Id_nguoidung=$id";
+    return queryOne($sql);
+}
 function thembl($id_nguoidung,$id_xe,$cmt,$ngay){
     $sql="insert into binh_luan(Binh_luan,Id_xe,Id_nguoidung,Thoigian_binhluan)
         

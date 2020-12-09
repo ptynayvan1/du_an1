@@ -24,11 +24,11 @@
       $gia=$xe['Gia_thue']*$ngay;
       $ngaytra=date("d-m-Y",strtotime($xe['ngay_tra']));
       $ngaythue=date("d-m-Y",strtotime($xe['Ngay_thue']));
-      if ($xe['trangthai']==1) {
+      if ($xe['trangThaiThanhToan']==1) {
         $trangthai="Đang xử lí";
         $ctt=0;
       } else {
-      if ($xe['trangthai']==0) {
+      if ($xe['trangThaiThanhToan']==0) {
         $trangthai="Chưa thanh toán";
         $ctt=1;
       } else {
