@@ -246,6 +246,11 @@ header("location: index.php?act=signup");
     $view="./site/views/signup.php";
     require_once "./site/layout.php";
   break;
+  case "user" :
+    $id = $_SESSION['id'];
+    $user = getUser($id);
+    include './site/views/user.php';
+  break;
   }
 ?><!-- Ngân hàng	NCB
 Số thẻ	9704198526191432198
