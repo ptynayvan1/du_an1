@@ -176,7 +176,7 @@
                                 echo '<p class="dk" style="color:black"><i class="fas fa-user-tie" style="font-size:24px; margin-right: 10px;"></i>'.$_SESSION['user'].'</p>
                                 <div class="tttk">
                                 <p><a href="index.php?act=user">Thông tin tài khoản</a></p>
-                                <p><a href="index.php?act=ttcn">Thông tin tài khoản</a></p>
+                                <p><a href="index.php?act=ttcn"> Thay Đổi Thông tin</a></p>
                                 <p><i class="fas fa-power-off" style="font-size:15px;margin-right: 10px;"></i><a href="index.php?act=logout">Đăng xuất</a></p>
                                 <p><a href="index.php?act=dathue">Đơn hàng của tôi</a></p>
                                 </div>';
