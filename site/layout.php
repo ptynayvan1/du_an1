@@ -34,6 +34,10 @@
     <script src="./site/views/js/jquery-ui.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<<<<<<< HEAD
+=======
+
+>>>>>>> dc1ff43e974f09d652a9d202ec7e322d11798c16
 </head>
 <style>
     .site-logo{
@@ -174,8 +178,8 @@
                                 if (isset($_SESSION['user'])){
                                 echo '<p class="dk" style="color:black"><i class="fas fa-user-tie" style="font-size:24px; margin-right: 10px;"></i>'.$_SESSION['user'].'</p>
                                 <div class="tttk">
-                                
-                                <p><a href="index.php?act=ttcn">Thông tin tài khoản</a></p>
+                                <p><a href="index.php?act=user">Thông tin tài khoản</a></p>
+                                <p><a href="index.php?act=ttcn"> Thay Đổi Thông tin</a></p>
                                 <p><i class="fas fa-power-off" style="font-size:15px;margin-right: 10px;"></i><a href="index.php?act=logout">Đăng xuất</a></p>
                                 <p><a href="index.php?act=dathue">Đơn hàng của tôi</a></p>
                                 </div>';

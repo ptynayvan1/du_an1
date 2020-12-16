@@ -3,12 +3,21 @@
         background-color:lightcyan;
         margin-left: 20px;
     }
+    .rtk{
+        width: 40%;
+        min-height: 50px;
+        margin-left: 500px;
+        margin-bottom: 50px;
+        font-weight: bold;
+        font-size: 15pt;
+    }
+
 </style>
-<div class="row" style=" margin-bottom:-120px;margin-top:80px">         
+<div class="row" style=" margin-bottom:-120px;margin-top:80px">        
                 <?php
                
                 if (is_array($checktk)) {
-                    echo $checktk['Tenhang'].$checktk['Loaixe'];
+                    echo '<div class="rtk">hãng xe:$checktk["Tenhang"].Số chỗ: $checktk["Loaixe"]</div>';
                    foreach ($timkiem as $k) {?>
                          <div class="col-md-6 col-lg-4 mb-4">
                         
