@@ -13,40 +13,114 @@
         <!-- Custom styles for this template -->
         <link href="/vnpay_php/assets/jumbotron-narrow.css" rel="stylesheet">  
         <script src="/vnpay_php/assets/jquery-1.11.3.min.js"></script>
+        <!-- gdfg -->
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="css/style.css">
     </head>
-
+    <style>
+    @import url('https://fonts.googleapis.com/css?family=Amatic+SC');  
+    .btn {
+      border: none;
+      display: block;
+      text-align: center;
+      cursor: pointer;
+      text-transform: uppercase;
+      outline: none;
+      overflow: hidden;
+      position: relative;
+      color: #fff;
+      font-weight: 700;
+      font-size: 15px;
+      background-color: #222;
+      padding: 17px 60px;
+      margin: 0 auto;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.20);
+    }
+      
+    .btn span {
+      position: relative; 
+      z-index: 1;
+    }
+      
+    .btn:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 490%;
+      width: 140%;
+      background: #78c7d2;
+      -webkit-transition: all .5s ease-in-out;
+      transition: all .5s ease-in-out;
+      -webkit-transform: translateX(-98%) translateY(-25%) rotate(45deg);
+      transform: translateX(-98%) translateY(-25%) rotate(45deg);
+    }
+      
+    .btn:hover:after {
+      -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+      transform: translateX(-9%) translateY(-25%) rotate(45deg);
+    }
+    .col-lg-4{
+      width: 100%;
+      background-color: blueviolet;
+      min-height: 500px;
+    }
+    
+  </style>
     <body>
 
         <div class="container">
             <div class="header clearfix">
-                <h3 class="text-muted">VNPAY DEMO</h3>
+                <h3 class="text-muted"></h3>
             </div>
             <h3>Tạo mới đơn hàng</h3>
             <div class="table-responsive">
-                <form action="http://duan1.huy/site/views/vnpay_create_payment.php" id="create_form" method="post">       
+                <form action="site/views/vnpay_create_payment.php" id="create_form" method="post">       
 
                     <div class="form-group">
-                        <label for="language">Loại hàng hóa </label>
-                        <select name="order_type" id="order_type" class="form-control">
-                            <option value="topup">Nạp tiền điện thoại</option>
-                            <option value="billpayment">Thanh toán hóa đơn</option>
-                            <option value="fashion">Thời trang</option>
-                            <option value="other">Khác - Xem thêm tại VNPAY</option>
-                        </select>
+                        <input type="hidden"  name="order_type" id="order_type" value="topup">
                     </div>
                     <div class="form-group">
-                        <label for="order_id">Mã hóa đơn</label>
-                        <input class="form-control" id="order_id" name="order_id" type="text" value="<?php echo date("YmdHis") ?>"/>
+                        <input class="form-control" id="order_id" name="order_id" type="hidden" value="<?php echo date("YmdHis") ?>"/>
                     </div>
-                    <div class="form-group">
-                        <label for="amount">Số tiền</label>
-                        <input class="form-control" id="amount"
-                               name="amount" type="number" value="10000"/>
-                    </div>
-                    <div class="form-group">
-                        <label for="order_desc">Nội dung thanh toán</label>
-                        <textarea class="form-control" cols="20" id="order_desc" name="order_desc" rows="2">Noi dung thanh toan</textarea>
-                    </div>
+                    <div class="mb-3">
+  <label for="exampleFormControlInput2" class="form-label">Họ tên</label>
+  <input type="text" class="form-control" name="hoten" id="exampleFormControlInput1" placeholder="" value="<?=$ttcn['ho_ten']?>">
+</div>
+<div class="mb-3">
+  <label for="exampleFormControlInput3" class="form-label">Tên xe</label>
+  <input type="email" class="form-control" name="email" id="exampleFormControlInput1" placeholder="" value="<?=$ttcn['email']?>">
+</div>
+<div class="mb-3">
+  <label for="exampleFormControlInput4" class="form-label">Số điện thoại</label>
+  <input type="number" class="form-control" name="sdt" id="exampleFormControlInput1" placeholder="" value="<?=$ttcn['sdt']?>">
+</div>
+<div class="mb-3">
+  <label for="exampleFormControlInput5" class="form-label">Thành phố</label>
+  <input type="text" class="form-control" name="tp" id="exampleFormControlInput1" placeholder="" value="<?=$ttcn['thanh_pho']?>">
+</div>
+<div class="mb-3">
+  <label for="exampleFormControlInput5" class="form-label">Địa chỉ</label>
+  <input type="text" class="form-control" name="diachi" id="exampleFormControlInput1" placeholder="" value="<?=$ttcn['dia_chi']?>">
+</div>
+<div class="mb-3">
+  <label for="exampleFormControlInput5" class="form-label">Tên xe</label>
+  <input type="text" class="form-control" name="diachi" id="exampleFormControlInput1" placeholder="" value="<?=$donhang['Ten_xe']?>" readonly>
+</div>
+<div class="mb-3">
+<input type="hidden" name="gia" value="<?=$gia?>">
+<input type="hidden" name="id" value="<?=$id?>">
+  <label for="exampleFormControlInput6" class="form-label h-st">Số tiền : <?=number_format($gia,'0','.','.')?>VNĐ</label>
+</div>
                     <div class="form-group">
                         <label for="bank_code">Ngân hàng</label>
                         <select name="bank_code" id="bank_code" class="form-control">
@@ -76,24 +150,16 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="language">Ngôn ngữ</label>
-                        <select name="language" id="language" class="form-control">
-                            <option value="vn">Tiếng Việt</option>
-                            <option value="en">English</option>
-                        </select>
+                        <input type="hidden" value ="vn" name="language" id="language">
                     </div>
-
-                    <button type="submit" class="btn btn-primary" id="btnPopup">Thanh toán Popup</button>
-                    <button type="submit" class="btn btn-default">Thanh toán Redirect</button>
+                    <button type="submit" class="btn btn-default">Thanh toán </button>
 
                 </form>
             </div>
             <p>
                 &nbsp;
             </p>
-            <footer class="footer">
-                <p>&copy; VNPAY 2015</p>
-            </footer>
+            
         </div>  
         <link href="https://sandbox.vnpayment.vn/paymentv2/lib/vnpay/vnpay.css" rel="stylesheet"/>
         <script src="https://sandbox.vnpayment.vn/paymentv2/lib/vnpay/vnpay.js"></script>

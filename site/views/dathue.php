@@ -24,19 +24,28 @@
       $gia=$xe['Gia_thue']*$ngay;
       $ngaytra=date("d-m-Y",strtotime($xe['ngay_tra']));
       $ngaythue=date("d-m-Y",strtotime($xe['Ngay_thue']));
-      if ($xe['trangthai']==1) {
-        $trangthai="Đang xử lí";
-        $ctt=0;
-      } else {
-      if ($xe['trangthai']==0) {
+     switch ($xe['trang_thai']) {
+      case '0':
+        $trangthai="Chờ xác nhận";
+        break;
+      case '1':
         $trangthai="Chưa thanh toán";
         $ctt=1;
-      } else {
-        $trangthai="Đã xong";
-        $ctt=0;
-      }
-      
-      }?>
+        break;
+      case '2':
+        $trangthai="Đã giao hàng";
+        break;
+      case '3':
+        $trangthai="Hết hạn";
+        break;
+        case '4':
+          $trangthai="Đã thanh toán";
+          break;
+      default:
+        $trangthai="Không xác định";
+        break;
+     }
+     ?>
           <tr>
           
 <td><?=$xe['Ten_xe']?></td>
@@ -45,10 +54,8 @@
 <td><?=$trangthai?></td>
 <td><?=number_format($gia,'0','.','.')?>VNĐ</td>
 <?php
-if ($ctt==1) {
+if ($xe['trang_thai']=='1') {
   echo '<td><button class="btn btn-success"><a href="index.php?act=thanhtoan1&id='.$xe['Id_donhang'].'&gia='.$gia.'">Thanh toán</a></button></td>';
-}else{
-  echo '<td></td>';
 }
 ?>
 </tr>

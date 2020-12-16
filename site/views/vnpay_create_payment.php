@@ -1,17 +1,20 @@
 <?php
-
+ob_start();
+session_start();
 error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED);
 /**
  * Description of vnpay_ajax
  *
  * @author xonv
  */
-require_once("./config.php");
+require_once("./configvnpay.php");
 
 $vnp_TxnRef = $_POST['order_id']; //Mã đơn hàng. Trong thực tế Merchant cần insert đơn hàng vào DB và gửi mã này sang VNPAY
-$vnp_OrderInfo = $_POST['order_desc'];
+$vnp_OrderInfo = "Thanh toán thuê xe cho id :".$_POST['id'];
+$_SESSION['iddh']=$_POST['id'];
+$_SESSION['a']="aaaa";
 $vnp_OrderType = $_POST['order_type'];
-$vnp_Amount = $_POST['amount'] * 100;
+$vnp_Amount = $_POST['gia'] * 100;
 $vnp_Locale = $_POST['language'];
 $vnp_BankCode = $_POST['bank_code'];
 $vnp_IpAddr = $_SERVER['REMOTE_ADDR'];
@@ -57,5 +60,6 @@ if (isset($vnp_HashSecret)) {
 $returnData = array('code' => '00'
     , 'message' => 'success'
     , 'data' => $vnp_Url);
-echo json_encode($returnData);
-header("location: ".$vnp_Url."");
+// echo json_encode($returnData);
+header('location: '.$vnp_Url.'');
+?>

@@ -8,4 +8,4 @@
 $vnp_TmnCode = "IUNUDIA5"; //Mã website tại VNPAY  thay doi cai nay chua roi
 $vnp_HashSecret = "HRZMLPMNZYCOUWVXVOALQSRGDLYFZWDA"; //Chuỗi bí mật
 $vnp_Url = "http://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
-$vnp_Returnurl = "http://localhost/vnpay_php/vnpay_return.php";
+$vnp_Returnurl = "http://duan1.huy/index.php?act=savethanhtoan";

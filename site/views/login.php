@@ -125,6 +125,7 @@ Facebook
 <i class="fab fa-google"></i>
 Google
 </a> -->
+<input type="hidden" value="<?=$_SERVER["HTTP_REFERER"]?>" name="url">
 				</form>
 			</div>
 		</div>

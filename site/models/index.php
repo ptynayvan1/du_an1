@@ -25,7 +25,7 @@ function thuexe($idnd,$idxe,$ngaythue,$ngaytra){
     execute($sql);
 }
 function capnhatdh($id){
-    $sql="UPDATE `don_hang` SET `trangthai` = '1' WHERE `don_hang`.`Id_donhang` = $id";
+    $sql="UPDATE `don_hang` SET `trang_thai` = '4' WHERE `don_hang`.`Id_donhang` = $id";
     return execute($sql);
 }
 function ttdh($id){

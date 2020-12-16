@@ -9,8 +9,7 @@
  * Cập nhật kết quả vào Database
  * Trả kết quả ghi nhận lại cho VNPAY
  */
-
-require_once("./config.php");
+require_once("./configvnpay.php");
 $inputData = array();
 $returnData = array();
 $data = $_REQUEST;
@@ -60,7 +59,8 @@ try {
                 //
                 //
                 //
-                //Trả kết quả về cho VNPAY: Website TMĐT ghi nhận yêu cầu thành công                
+                //Trả kết quả về cho VNPAY: Website TMĐT ghi nhận yêu cầu thành công
+
                 $returnData['RspCode'] = '00';
                 $returnData['Message'] = 'Confirm Success';
             } else {
