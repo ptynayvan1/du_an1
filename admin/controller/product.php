@@ -16,20 +16,24 @@ $action='index';
         break;
         case 'insert':
         //lay data tu form
-            $cateId=$_POST['catalogId'];
+            $catalogId=$_POST['catalogId'];
             $name=$_POST['productName'];
             $date=$_POST['date'];
             $price=$_POST['price'];
             $moTa=$_POST['moTa'];
             $img=$_FILES['productImage']['name'];//lay ten hinh
-        $path='../site/image/'.$img;
-        if(move_uploaded_file($_FILES['productImage']['tmp_name'],$path)){
-            addProduct($catalogId,$name,$img,$price,$date,$mota);
-        }
-        echo '<script type="text/javascript">
-        window.location="index.php?ctrl=product";
-</script>';
-            addProduct($cateId,$name,$img,$price,$date,$moTa);
+            $path='../site/views/images/'.$img;
+            if(move_uploaded_file($_FILES['productImage']['tmp_name'],$path)){
+                addProduct($catalogId,$name,$img,$price,$date,$moTa);
+                echo '<script type="text/javascript">
+                window.location="index.php?ctrl=product";
+            </script>';
+            }else {
+                echo '<script type="text/javascript">
+                window.location="index.php?ctrl=product&action=addnew";
+        </script>';
+            }
+            
             break;
             case 'delte':
             $id=$_GET['id'];
@@ -44,24 +48,23 @@ $action='index';
         include 'view/product/edit.php';
         break;
         case 'update':
-        $id=$_POST['id'];
-        $name=$_POST['nameproduct'];
-        $date=$_POST['date'];
-        $mota=$_POST['mota'];
-        $address = $_POST['address'];
-        $img=$_FILES['productImage']['name'];//lay ten hinh
-        $path='../site/images/'.$img;
-        if(move_uploaded_file($_FILES['productImage']['tmp_name'],$path)){
-            addProduct($catalogId,$name,$img,$price,$date,$moTa);
-        }
-        updateproduct($id,$name,$img,$date,$mota,$address);
-        echo '<script type="text/javascript">
-        window.location="index.php?ctrl=product";
-</script>';
-        updateproduct($id,$name,$img,$date,$mota,$address);
-        echo '<script type="text/javascript">
-                window.location="index.php?ctrl=product";
-            </script>';
+            $id=$_POST['id'];
+            $name=$_POST['nameproduct'];
+            $date=$_POST['date'];
+            $mota=$_POST['mota'];
+            $address = $_POST['address'];
+            $image=img($id)['hinh_xe'];
+            $img=$_FILES['productImage']['name'];//lay ten hinh
+            $path='../site/views/images/'.$img;
+            if(move_uploaded_file($_FILES['productImage']['tmp_name'],$path)){
+                updateproduct($id,$name,$img,$date,$mota,$address);
+            }else{
+                updateproduct($id,$name,$image,$date,$mota,$address);
+            }
+               
+            echo '<script type="text/javascript">
+                    window.location="index.php?ctrl=product";
+                </script>';
         break;
         case 'detail':
             $id = $_GET['id'];

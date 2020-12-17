@@ -43,7 +43,7 @@
   </div> 
   <div class="form-group">
     <label for="exampleInputPassword1">Mật khẩu</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" name="matkhau" placeholder="Mật khẩu" pattern="[0-9]{1,6}" title="nhập các kí tự '0-9' và không quá 6 số">
+    <input type="password" class="form-control" id="exampleInputPassword1" name="matkhau" placeholder="Mật khẩu" pattern="[a-z][0-9]{6,15}" title="nhập các kí tự '0-9' 'a-z' và từ 6-15 số">
   </div>
   <button type="submit" class="btn btn-primary">Đăng ký</button>
 </form>

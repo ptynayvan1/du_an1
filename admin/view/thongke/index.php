@@ -29,7 +29,7 @@
             </table>
           </div>
         <div class="card-footer">
-            <a href="index.php?ctrl=thongke&action=chart" class="btn btn-danger">See chart</a>
+            <a href="index.php?ctrl=thongke&action=chart" class="btn btn-danger">Xem biểu đồ</a>
          
         </div>
         
@@ -70,7 +70,7 @@
             </table>
           </div>
         <div class="card-footer">
-            <a href="index.php?ctrl=thongke&action=chartxe" class="btn btn-danger">See chart Xe</a>
+            <a href="index.php?ctrl=thongke&action=chartxe" class="btn btn-danger">Xem biểu đồ</a>
          
         </div>
         

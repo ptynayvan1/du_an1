@@ -42,7 +42,8 @@
         $ngaytra=$_POST['ngaytra'];
         $idnd=$_SESSION['id'];
         $idxe=$_POST['idxe'];
-        thuexe($idnd,$idxe,$ngaydat,$ngaytra);
+        $ngay_dat= date("Y-m-d");
+        thuexe($idnd,$idxe,$ngaydat,$ngaytra,$ngay_dat);
         unset($_SESSION['cb_thuexe']);
         header("location:index.php");
       } else {

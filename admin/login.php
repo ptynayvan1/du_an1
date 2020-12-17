@@ -80,9 +80,8 @@ span.psw {
         $pass = $_POST['pass'];
         if(checkdn($admin,$pass)){
             $_SESSION['admin'] = $admin;
+            $_SESSION['pass']= $pass;
             header("location:index.php");
-        }else {
-          
         }
         
     }
@@ -91,7 +90,7 @@ span.psw {
 
 <form action="login.php" method="post">
   <div class="imgcontainer">
-    <img src="img_avatar2.png" alt="Avatar" class="avatar">
+    <img src="../site/views/images/img-01.png" alt="Avatar" class="avatar">
   </div>
 
   <div class="container">

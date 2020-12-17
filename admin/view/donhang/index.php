@@ -28,17 +28,32 @@
               echo '<td>'.$od['Id_xe'].'</td>';
               echo '<td>'.$od['Ngay_thue'].'</td>';
               echo '<td>'.$od['trang_thai'].'</td>';
-              if($od['trang_thai'] == 'padding'){
+              if($od['trang_thai'] == '0'){
                 echo '<td style="text-align:center;"><a href="index.php?ctrl=donhang&action=cancel&id='.$od['Id_donhang'].'" class="btn btn-danger">cancel</a>
                   <a href="index.php?ctrl=donhang&action=confirm&id='.$od['Id_donhang'].'" class="btn btn-success">confirm</a>
                   <a href="index.php?ctrl=ctdh&action=chitietdonhang&id='.$od['Id_donhang'].'" class="btn btn-info">Chi tiết đơn hàng</a>
                   </td>
                 ';
-              }elseif($od['trang_thai'] == 'Canceled'){
-                echo '<td style="text-align:center;"><a  href="#"  class="btn btn-danger btn-xs" disabled>Cancelled</a>
+              }elseif($od['trang_thai'] == '1'){
+                echo '<td style="text-align:center;"><a  href="#"  class="btn btn-danger btn-xs" disabled>Đơn Hàng được xác nhận</a>
                 <a href="index.php?ctrl=ctdh&action=chitietdonhang&id='.$od['Id_donhang'].'" class="btn btn-info">Chi tiết đơn hàng</a>
                 </td>';
-              }else{
+              }
+              elseif($od['trang_thai'] == '4'){
+                echo '<td style="text-align:center;"><a  href="#"  class="btn btn-success btn-xs" disabled>Đơn hàng đã thanh toán </a>
+                <a href="index.php?ctrl=ctdh&action=chitietdonhang&id='.$od['Id_donhang'].'" class="btn btn-info">Chi tiết đơn hàng</a>
+                </td>';
+              }elseif($od['trang_thai'] == '3'){
+                echo '<td style="text-align:center;"><a  href="#"  class="btn btn-danger btn-xs" disabled>Đơn hàng hết hạn </a>
+                <a href="index.php?ctrl=ctdh&action=chitietdonhang&id='.$od['Id_donhang'].'" class="btn btn-info">Chi tiết đơn hàng</a>
+                </td>';
+              }
+              elseif($od['trang_thai'] == '5'){
+                echo '<td style="text-align:center;"><a  href="#"  class="btn btn-danger btn-xs" disabled>Đơn hàng đã hủy </a>
+                <a href="index.php?ctrl=ctdh&action=chitietdonhang&id='.$od['Id_donhang'].'" class="btn btn-info">Chi tiết đơn hàng</a>
+                </td>';
+              }
+              else{
                 echo '<td style="text-align:center;">
                         <a href="#"  class="btn btn-success btn-xs" disabled>Confirmed</a>
                         <a href="index.php?ctrl=ctdh&action=chitietdonhang&id='.$od['Id_donhang'].'" class="btn btn-info">Chi tiết đơn hàng</a>

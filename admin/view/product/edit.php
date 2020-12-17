@@ -30,7 +30,7 @@
                 <label for=""><p>Img:</p>
                   <img src="../site/views/images/<?php echo $p['hinh_xe'];?>" width="300px" alt="">
                 </label>
-                <input type="file"  value="<?php echo $p['Hinh_xe'];?>" name="productImage" class="form-control" >
+                <input type="file"  value="<?php echo $p['hinh_xe'];?>" name="productImage" class="form-control" >
 
               </div>
 

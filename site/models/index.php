@@ -20,8 +20,8 @@ function anhxe($anhxe){
     $manganh=explode(",",$anhxe);
     return $manganh;
 }
-function thuexe($idnd,$idxe,$ngaythue,$ngaytra){
-    $sql="INSERT INTO `don_hang` (`Id_donhang`, `Id_nguoidung`, `Id_xe`, `Ngay_thue`, `ngay_tra`) VALUES (NULL, '$idnd', '$idxe', '$ngaythue', '$ngaytra')";
+function thuexe($idnd,$idxe,$ngaythue,$ngaytra,$ngay_dat){
+    $sql="INSERT INTO `don_hang` (`Id_donhang`, `Id_nguoidung`, `Id_xe`, `Ngay_thue`, `ngay_tra`,`ngay_dat`) VALUES (NULL, '$idnd', '$idxe', '$ngaythue', '$ngaytra','$ngay_dat')";
     execute($sql);
 }
 function capnhatdh($id){
@@ -38,7 +38,7 @@ function themngd($hoten,$matkhau,$tendn,$sdt,$dc,$tp,$qg,$email,$cmnd){
    return postid($sql);
 }
 function dhdaxong($idnd){
-    $sql="SELECT * FROM `don_hang` INNER JOIN xe ON xe.id_xe=don_hang.Id_xe WHERE Id_nguoidung=$idnd";
+    $sql="SELECT * FROM `don_hang` INNER JOIN xe ON xe.id_xe=don_hang.Id_xe WHERE Id_nguoidung=$idnd order by ngay_dat desc";
     return query($sql);
 }
 function getbinhluan($id){

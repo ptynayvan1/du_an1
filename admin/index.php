@@ -23,6 +23,12 @@
     <!-- End Layout styles -->
     <link rel="shortcut icon" href="assets/images/favicon.ico" />
 </head>
+<?php 
+    session_start();
+    if(!isset($_SESSION['admin'])){
+        header("location:login.php");
+    }
+?>
 
 <body>
     <div class="container-scroller">
@@ -77,13 +83,20 @@
                     <li class="nav-item">
                         <a class="nav-link" href="index.php?ctrl=product&action=addnew">
                             <i class="menu-icon typcn typcn-user-outline"></i>
-                            <span class="menu-title">AddProduct</span>
+                            <span class="menu-title">Thêm xe</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link"  href="index.php?ctrl=user">
                             <i class="menu-icon typcn typcn-document-add"></i>
-                            <span class="menu-title">User Pages</span>
+                            <span class="menu-title">Người dùng</span>
+                        </a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"  href="logout.php">
+                            <i class="menu-icon typcn typcn-document-add"></i>
+                            <span class="menu-title">Logout</span>
                         </a>
 
                     </li>

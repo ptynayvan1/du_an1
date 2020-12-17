@@ -18,11 +18,11 @@ function deteleOrder($mahd){
     return execute($sql);
 }
 function updateCancel($id){
-    $sql="UPDATE don_hang SET trang_thai='Canceled' where Id_donhang='$id'";
+    $sql="UPDATE don_hang SET trang_thai='5' where Id_donhang='$id'";
     return execute($sql);
 }
 function updateConfirm($id){
-    $sql="UPDATE don_hang SET trang_thai='Confirmed' where Id_donhang='$id'";
+    $sql="UPDATE don_hang SET trang_thai='1' where Id_donhang='$id'";
     return execute($sql);
 }
 

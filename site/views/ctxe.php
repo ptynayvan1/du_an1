@@ -265,10 +265,11 @@
                                                 <h3>Ngày Trả</h3>
                                                 <input type="text" placeholder="Ngày trả" name="ngaytra"  class="to" readonly>
                                                 <input type="hidden" value="<?=$ctxe['id_xe']?>" name="idxe">
+
                                                 <div class="modal-footer" style="margin-top: 15px;">
-                                            <button  class="btn btn-default" >Hoàn Tất</button>
-                                            </div>
-                                                </form>
+                                                <button  class="btn btn-default" >Hoàn Tất</button>
+                                                </div>
+                                            </form>
                                             </div>                                     
                                         </div>
                                         </div>
