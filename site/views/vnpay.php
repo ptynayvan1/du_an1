@@ -152,8 +152,9 @@
                     <div class="form-group">
                         <input type="hidden" value ="vn" name="language" id="language">
                     </div>
-                    <button type="submit" class="btn btn-default">Thanh toán </button>
-
+                    <div class="button_container">
+                      <button type="submit" class="btn"><i class="fa fa-money" style="margin-right: 10px ;" aria-hidden="true"></i><span>Thanh toán</span></button>
+                    </div>
                 </form>
             </div>
             <p>

@@ -5,6 +5,15 @@
   .btn {
     color:white;
   }
+  .gg{
+    background-color: green;
+  }
+  .brow{
+    background-color:brown;
+  }
+  .tt{
+    background-color: chartreuse;
+  }
 </style>
 <div class="container">
 <div class="col-12">
@@ -71,13 +80,13 @@
 <td><?=number_format($gia,'0','.','.')?>VNĐ</td>
 <?php
 if ($xe['trang_thai']=='1') {
-  echo '<td><button class="btn btn-success"><a href="index.php?act=thanhtoan1&id='.$xe['Id_donhang'].'&gia='.$gia.'">Thanh toán</a></button></td>';
+  echo '<td><button class="btn btn-success tt"><a href="index.php?act=thanhtoan1&id='.$xe['Id_donhang'].'&gia='.$gia.'">Thanh toán</a></button></td>';
 }else if($xe['trang_thai']=='0'){
-  echo '<td><a  href="#"  class="btn btn-danger btn-xs" disabled>Chờ xác nhận</a></td>';
+  echo '<td><a  href="#"  class="btn btn-danger btn-xs brow" disabled>Chờ xác nhận</a></td>';
 }else if($xe['trang_thai']=='4'){
-  echo '<td><a  href="#"  class="btn btn-success btn-xs" disabled>Thanh toán thành công</a></td>';
+  echo '<td><a  href="#"  class="btn btn-success btn-xs " disabled>Thanh toán thành công</a></td>';
 }else if($xe['trang_thai']=='3'){
-  echo '<td><a  href="#"  class="btn btn-danger btn-xs" disabled>Đơn hàng hết hạn</a></td>';
+  echo '<td><a  href="#"  class="btn btn-danger btn-xs gg" disabled>Đơn hàng hết hạn</a></td>';
 }else if($xe['trang_thai']=='5'){
   echo '<td><a  href="#"  class="btn btn-danger btn-xs" disabled>Đơn hàng bị hủy</a></td>';
 }else {

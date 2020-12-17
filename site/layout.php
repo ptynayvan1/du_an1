@@ -250,7 +250,7 @@
                                     </select>
                                 </div> -->
                                 <div class="mb-3 mb-md-0 ml-3 col-md-3">
-                                    <input type="submit" value="Tìm ngay" class="btn btn-primary btn-block py-3">
+                                    <input type="submit" value="Tìm ngay"class="btn btn-primary btn-block py-3">
                                 </div>
                             </div>
 
